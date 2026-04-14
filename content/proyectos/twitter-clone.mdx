@@ -1,0 +1,22 @@
+---
+title: "Twitter/X Follow Card - Fullstack Clone"
+role: "Lead Developer & Architect"
+tag: "Fullstack / Zero Flicker"
+---
+
+# Twitter/X Follow Card – Fullstack Clone
+
+## 🛑 El Problema (Situación)
+El proyecto comenzó como una maqueta frontend que rápidamente evidenció fallas arquitectónicas comunes: estado efímero (se perdía al recargar), asincronía mal gestionada, indicadores de carga bruscos y una pésima experiencia de usuario.
+
+## 🎯 El Reto (Tarea)
+Evolucionar la aplicación aislando la capa *Front-end* del *Back-end*. El objetivo estricto era implementar persistencia de datos real y asegurar estándares de ingeniería a nivel de base de datos e interfaz, garantizando un comportamiento **Zero-Flicker** (Sin parpadeos de *Loading*) y una UX reactiva al 100%.
+
+## ⚡ La Ejecución Arquitectónica (Acción)
+*   **Backend Resiliente:** Se integró Node.js con Express, conectándolo a **Prisma ORM** y respaldado por una base de datos PostgreSQL en **Supabase**.
+*   **Supervivencia HMR:** Se implementó *PGBouncer* para el *pooling* de conexiones. El objetivo era garantizar que el *Hot Module Replacement* (HMR) de Vite sobreviviera al volumen de reconexiones en desarrollo sin tumbar la Base de Datos.
+*   **Estado Frontend Optimista:** En el cliente, las peticiones en cascada se sustituyeron por **TanStack React Query**. Esto desbloqueó mutaciones optimistas y el uso transiciones ociosas o `isPending`, aniquilando de raíz los indicadores inestables.
+*   **Integridad y Delivery:** Todo *commit* inyectado en la rama principal (*main*) operado por AI fue sometido a una auditoría estricta de Changelog y versionado Semántico.
+
+## 🏆 El Impacto (Resultado)
+La maqueta se consolidó en un producto **Fullstack Production-Ready**. El estado es bidireccional estable, las consultas DB son implacables ante el agotamiento transaccional, y el cliente percibe una latencia nula (**Zero-Flicker UX**) durante interacciones profundas.
