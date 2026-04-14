@@ -166,30 +166,53 @@ a:hover {
 /* Responsive Móvil */
 @media (max-width: 1024px) {
   body { overflow: auto; }
+
   .portfolio-grid {
     grid-template-columns: 1fr;
     height: auto;
   }
+
+  /* Sidebar se colapsa como bloque normal, NO sticky */
   .sidebar {
     height: auto;
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    position: relative; /* Era sticky, robaba media pantalla */
+    top: unset;
+    z-index: auto;
   }
+
   .sidebar-content {
-    gap: 2rem;
+    gap: 1.5rem;
   }
+
+  .navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .navigation a {
+    font-size: 0.85rem;
+  }
+
+  /* Desactivar Scroll Snap en móvil */
   .snap-container {
     height: auto;
     overflow-y: visible;
-    scroll-snap-type: none; /* Se desactiva el snap por usabilidad móvil */
+    scroll-snap-type: none;
   }
+
   .snap-section {
     height: auto;
-    min-height: 80vh;
-    padding: 4rem 2rem;
+    min-height: auto; /* Las secciones se adaptan al contenido */
+    padding: 3rem 1.5rem;
+  }
+
+  /* DESACTIVAR el Focus Dimming en pantallas táctiles.
+     En móvil, :hover se "pega" después de un tap y deja todo gris. */
+  .focus-group:hover > .focus-item:not(:hover) {
+    opacity: 1;
+    filter: none;
   }
 }
