@@ -17,12 +17,14 @@ export function Sidebar() {
         </nav>
 
         <div className="contact-actions">
+          {/* CV oculto temporalmente — descomentar cuando esté listo:
           <a href={siteConfig.cvUrl} target="_blank" rel="noopener noreferrer" className="btn-cv">
             Descargar CV // PDF
           </a>
+          */}
           <div className="social-links">
             <a href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href={`mailto:${siteConfig.contactEmail}`} target="_blank" rel="noopener noreferrer">Email</a>
+            <a href={`mailto:${siteConfig.contactEmail}`}>Contacto</a>
           </div>
         </div>
       </div>
