@@ -42,3 +42,19 @@ next-env.d.ts
 
 # Agent Workspace Data
 .agent/
+AGENTS.md
+CLAUDE.md
+
+# Archivos de Arquitectura Interna SDD
+MANUAL_DE_MANTENIMIENTO.md
+ROADMAP.md
+SPECIFICATION.md
+TECHNICAL_DEBT.md
+tasks.md
+
+# Testing y Auxiliares
+playwright.config.ts
+vitest.config.ts
+tests/
+test-results/
+temp-app/
