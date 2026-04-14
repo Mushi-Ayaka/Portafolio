@@ -58,3 +58,5 @@ vitest.config.ts
 tests/
 test-results/
 temp-app/
+
+.vercel

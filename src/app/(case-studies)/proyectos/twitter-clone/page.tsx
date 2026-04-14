@@ -15,7 +15,7 @@ export default function TwitterClonePage() {
           <a 
             href="https://practica-con-react-client.vercel.app/" 
             target="_blank" 
-            rel="noopener noreferrer" 
+            rel="noopener" 
             className={styles.demoLink}
           >
             Ver Demo en Vivo →
