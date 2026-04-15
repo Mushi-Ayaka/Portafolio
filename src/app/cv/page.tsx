@@ -56,7 +56,9 @@ const cvData = {
        title: "Plan de mantenimiento MERCAL Centro Plaza (2025)",
        role: "Project Manager",
        desc: "Mantenimiento preventivo y correctivo a 10 estaciones de trabajo, logrando 90% de operatividad técnica.",
-       bullets: []
+       bullets: [
+         "Blog del proyecto: https://equiposinformaticosenmercal.blogspot.com/"
+       ]
     }
   ]
 };
@@ -101,39 +103,6 @@ export default function CVPage() {
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>Perfil Profesional</h3>
           <p className={styles.text}>{cvData.pitch}</p>
-        </section>
-
-        {/* Stack Técnico */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Stack Técnico & Competencias</h3>
-          <div className={styles.skillsGrid}>
-            <div className={styles.skillCategory}>
-              <h3>Frontend</h3>
-              <p>{cvData.technicalStack.frontend.join(' • ')}</p>
-            </div>
-            <div className={styles.skillCategory}>
-              <h3>Backend & Base de Datos</h3>
-              <p>{cvData.technicalStack.backend.join(' • ')}</p>
-            </div>
-            <div className={styles.skillCategory}>
-              <h3>Ingeniería Avanzada</h3>
-              <p>{cvData.technicalStack.advanced.join(' • ')}</p>
-            </div>
-            <div className={styles.skillCategory}>
-              <h3>Herramientas y Metodologías</h3>
-              <p>{cvData.technicalStack.tools.join(' • ')}</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Metodología */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>Metodología de Trabajo (AI-Assisted & SDD)</h3>
-          <ul className={styles.list}>
-            {cvData.methodology.map((m, idx) => (
-              <li key={idx}><strong>{m.title}:</strong> {m.desc}</li>
-            ))}
-          </ul>
         </section>
 
         {/* Proyectos Core */}
