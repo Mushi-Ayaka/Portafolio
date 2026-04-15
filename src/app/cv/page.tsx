@@ -67,7 +67,7 @@ export default function CVPage() {
   };
 
   return (
-    <div style={{ backgroundColor: '#222', minHeight: '100vh', padding: '2rem 0' }}>
+    <div style={{ backgroundColor: '#f9f9f9', minHeight: '100vh', padding: '2rem 0' }}>
       <Link href="/" className={styles.backBtn}>
         ← Volver al Portafolio
       </Link>

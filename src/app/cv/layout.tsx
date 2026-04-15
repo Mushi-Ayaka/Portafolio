@@ -16,7 +16,7 @@ export default function CVLayout({
 }) {
   return (
     <html lang="es" className={inter.variable}>
-      <body style={{ backgroundColor: 'var(--bg-dark)' }}>
+      <body style={{ backgroundColor: '#fff', color: '#000' }}>
         {children}
       </body>
     </html>
