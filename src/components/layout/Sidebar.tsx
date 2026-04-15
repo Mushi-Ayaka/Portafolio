@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import Link from 'next/link';
 
 export function Sidebar() {
   return (
@@ -7,21 +8,20 @@ export function Sidebar() {
         <div className="profile">
           <h1 className="name">{siteConfig.name}</h1>
           <p className="role">{siteConfig.role}</p>
+          <Link href={siteConfig.cvUrl} className="btn-cv mobile-cv-btn">Ver Currículum (CV)</Link>
         </div>
 
         <nav className="navigation">
-          <a href="#presentacion">01. Presentación</a>
-          <a href="#skills">02. Stack Técnico</a>
-          <a href="#flujo">03. Metodología</a>
-          <a href="#proyectos">04. Case Studies</a>
+          <Link href="/#presentacion">01. Presentación</Link>
+          <Link href="/#skills">02. Stack Técnico</Link>
+          <Link href="/#flujo">03. Metodología</Link>
+          <Link href="/#proyectos">04. Case Studies</Link>
         </nav>
 
         <div className="contact-actions">
-          {/* CV oculto temporalmente — descomentar cuando esté listo:
-          <a href={siteConfig.cvUrl} target="_blank" rel="noopener noreferrer" className="btn-cv">
-            Descargar CV // PDF
-          </a>
-          */}
+          <Link href={siteConfig.cvUrl} className="btn-cv desktop-cv-btn">
+            Ver Currículum / Imprimir
+          </Link>
           <div className="social-links">
             <a href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href={`mailto:${siteConfig.contactEmail}`}>Contacto</a>

@@ -131,6 +131,11 @@ a:hover {
   MECÁNICA SCROLL SNAPPING (DERECHA)
   ========================================
 */
+/* CV BTNS */
+.mobile-cv-btn {
+  display: none;
+}
+
 .snap-container {
   height: 100vh;
   overflow-y: auto;
@@ -181,6 +186,16 @@ a:hover {
     position: relative; /* Era sticky, robaba media pantalla */
     top: unset;
     z-index: auto;
+  }
+
+  .mobile-cv-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .desktop-cv-btn {
+    display: none;
   }
 
   .sidebar-content {
