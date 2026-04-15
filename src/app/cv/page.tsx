@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './cv.module.css';
 import { siteConfig } from '@/config/site';
 
