@@ -2,12 +2,13 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './cv.module.css';
 import { siteConfig } from '@/config/site';
 
 // Data from the structured portfolio extracted previously
 const cvData = {
-  pitch: "Desarrollador Full-Stack especializado en el ecosistema React y Node.js (Next.js, Prisma, PostgreSQL). Mi principal diferenciador es la aplicación de rigor técnico avanzado mediante Spec-Driven Development (SDD) y Property-Based Testing (PBT); construyendo sistemas web robustos y escalables. Aporto estándares de certidumbre estructural desde la especificación arquitectónica del requerimiento hasta el despliegue final.",
+  pitch: "Desarrollador Full-Stack enfocado en el ecosistema React/Node. Construyo sistemas web escalables aplicando rigor avanzado mediante Spec-Driven Development (SDD) y Property-Based Testing (PBT), asegurando calidad estructural desde la arquitectura hasta el despliegue.",
   technicalStack: {
     frontend: ["React 19", "Next.js (App Router)", "Vite", "Zustand", "TanStack Query", "CSS Modules"],
     backend: ["Node.js", "Express", "Prisma ORM", "PostgreSQL", "Supabase"],
@@ -77,12 +78,15 @@ export default function CVPage() {
         {/* Header */}
         <header className={styles.header}>
           {/* FOTO - Debe existir en public/media/profile.jpg */}
-          <div style={{ position: 'relative', width: 120, height: 120, flexShrink: 0 }}>
-             {/* Using standard img for easier print rendering, could use next/image as well */}
-             <img 
+          <div style={{ position: 'relative', width: 90, height: 90, flexShrink: 0 }}>
+             <Image 
                src="/media/profile.jpg" 
                alt="Jonatan Baron" 
-               className={styles.photo} 
+               className={styles.photo}
+               width={90}
+               height={90}
+               priority
+               unoptimized
              />
           </div>
           <div className={styles.headerInfo}>

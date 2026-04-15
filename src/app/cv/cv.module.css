@@ -1,7 +1,7 @@
 .cv-container {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 3rem;
+  margin: 1.5rem auto;
+  padding: 2rem 2.5rem;
   background-color: white;
   color: black;
   border-radius: 8px;
@@ -11,40 +11,40 @@
 
 .header {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
   border-bottom: 2px solid #eee;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .photo {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   border-radius: 12px;
   object-fit: cover;
   border: 1px solid #ddd;
 }
 
 .headerInfo h1 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   margin-bottom: 0.2rem;
   color: #111;
   letter-spacing: -0.02em;
 }
 
 .headerInfo h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #555;
   font-weight: 500;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .contact {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #666;
 }
 
@@ -54,22 +54,22 @@
 }
 
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .sectionTitle {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #222;
   text-transform: uppercase;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
 }
 
 .text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: #444;
 }
 
@@ -92,40 +92,41 @@
 }
 
 .jobItem {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .jobHeader {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .jobHeader h3 {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #222;
 }
 
 .jobHeader span {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #777;
 }
 
 .jobInfo p {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #444;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
 }
 
 ul.list {
   padding-left: 1.2rem;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #555;
 }
 
 ul.list li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .printBtn {
@@ -140,7 +141,7 @@ ul.list li {
   font-weight: bold;
   cursor: pointer;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .printBtn:hover {
@@ -151,10 +152,10 @@ ul.list li {
 
 .backBtn {
   display: inline-block;
-  margin: 2rem 0 0 2rem;
+  margin: 1.5rem 0 0 2rem;
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .backBtn:hover {
@@ -163,6 +164,11 @@ ul.list li {
 
 /* Print Styles */
 @media print {
+  @page {
+    margin: 15mm; /* Margen muy delgado para asegurar una sola hoja */
+    size: A4 portrait;
+  }
+
   .cv-container {
     margin: 0;
     padding: 0;
