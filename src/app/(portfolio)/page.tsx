@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* 03. FLUJO DE TRABAJO */}
       <section id="flujo" className={`snap-section focus-item ${styles.section}`}>
-        <h2 className={styles.sectionTitle}>El Proceso Operativo</h2>
+        <h2 className={styles.sectionTitle}>El Proceso</h2>
         <ol className={styles.workflowList}>
           <li><strong>Especificación Estricta:</strong> Extraigo, debato y audito las fallas arquitectónicas del requerimiento antes de tocar el teclado.</li>
           <li><strong>Diseño:</strong> Elaboro mapas de interfaces, diseño los esquemas de bases de datos y orquesto la tolerancia a fallos.</li>
