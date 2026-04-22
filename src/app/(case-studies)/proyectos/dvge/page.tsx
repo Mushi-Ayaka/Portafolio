@@ -7,7 +7,7 @@ export default function DVGEPage() {
       {/* 1. HERO Y CONTEXTO VITAL */}
       <header className={styles.hero}>
         <h1 className={styles.title}>Dynamic Vector Graphics Engine</h1>
-        <p className={styles.subtitle}>Arquitectura de grado broadcast v4.0.0 con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y Sandbox de Seguridad.</p>
+        <p className={styles.subtitle}>Arquitectura de grado broadcast v4.1.5 con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y Sandbox de Seguridad.</p>
 
         <div className={styles.metaData}>
           <div className={styles.metaInfo}>
@@ -17,7 +17,7 @@ export default function DVGEPage() {
           
           <div className={styles.buttonGroup}>
             <a
-              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/latest/download/DVGE-Setup-Win.exe"
+              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v4.1.5/DVGE-Setup-4.1.5.exe"
               target="_blank"
               rel="noopener"
               className={styles.demoLink}
@@ -32,13 +32,14 @@ export default function DVGEPage() {
             >
               Ver Todas las Versiones
             </a>
-            <span
+            <a
+              href="https://mushi-ayaka.github.io/DVGE-Docs/"
+              target="_blank"
+              rel="noopener"
               className={styles.secondaryLink}
-              title="Próximamente"
-              style={{ cursor: 'not-allowed', opacity: 0.6 }}
             >
-              Página Oficial (Próximamente)
-            </span>
+              Página de Documentación
+            </a>
           </div>
         </div>
       </header>
