@@ -1,5 +1,5 @@
 import styles from '../page.module.css';
-import Link from 'next/link';
+import { ProjectCarousel } from '@/components/projects/ProjectCarousel';
 
 export default function Home() {
   return (
@@ -49,15 +49,7 @@ export default function Home() {
       {/* 04. PROYECTOS / EVIDENCIAS */}
       <section id="proyectos" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>La Evidencia</h2>
-        <div className={styles.projectsList}>
-          <Link href="/proyectos/twitter-clone" className={styles.projectCard}>
-            <div className={styles.projectInfo}>
-              <h3>Clon Arquitectónico de Twitter</h3>
-              <p>El fin de los tiempos de carga. Un estudio sobre escalabilidad <span className={styles.tooltip} data-tooltip="UX fluida que elimina los Spinners simulando 0 latencia.">Zero-Flicker</span> empleando Node/Express conectado mediante Supabase/Prisma.</p>
-            </div>
-            <span className={styles.tag}>Inspeccionar Sistema</span>
-          </Link>
-        </div>
+        <ProjectCarousel />
       </section>
     </div>
   );

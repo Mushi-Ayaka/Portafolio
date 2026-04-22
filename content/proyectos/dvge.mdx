@@ -1,0 +1,22 @@
+---
+title: "Dynamic Vector Graphics Engine (DVGE) v4.0.0"
+role: "Lead Architect & Engine Developer"
+tag: "Broadcast Engine / Security / QA Audit"
+---
+
+# Dynamic Vector Graphics Engine (DVGE) v4.0.0
+
+## El Problema (Situación)
+El motor de gráficos vectoriales comenzó como un prototipo experimental para DaVinci Resolve. Sin embargo, al escalar, presentó vulnerabilidades críticas: el entorno de los plugins podía acceder al sistema host (fuga de sandbox), el renderizado no era determinístico (causando desincronización en clips de alta fidelidad) y el sistema de guardado era propenso a la corrupción de archivos durante apagones o cierres inesperados.
+
+## El Reto (Tarea)
+Elevar el motor a un estándar de **Grado de Producción Broadcast**. El objetivo era blindar la seguridad del sistema mediante un aislamiento total del entorno de ejecución, garantizar renders "Frame-Perfect" para exportaciones profesionales en ProRes 4444 y estabilizar la persistencia de datos mediante operaciones atómicas asíncronas.
+
+## La Ejecución Arquitectónica (Acción)
+*   **Sandbox de Seguridad (GA Implementation):** Se implementó un entorno de ejecución sellado basado en `fakeWindow`. El motor intercepta y anula el acceso a APIs peligrosas de Electron (`ipcRenderer`, `process`, `require`), encapsulando cada gráfico en una burbuja de seguridad inquebrantable.
+*   **API Determinística v4.0:** Se deprecó el uso de librerías basadas en tiempo real (GSAP) en favor de un objeto `ctx.timeline` nativo. Este sistema calcula el progreso exacto basándose en cuadros (*frames*), eliminando cualquier rastro de deriva temporal durante el renderizado.
+*   **I/O Atómico y Resiliente:** El sistema de persistencia se refactorizó para usar escrituras asíncronas en archivos temporales con renombrado atómico. Esto garantiza que un fallo en el disco nunca corrompa el archivo de proyecto original.
+*   **Graceful Degradation:** Se inyectaron fronteras de error (*Error Boundaries*) y bloques `try/catch` globales en el loop de 60fps. Si un plugin falla, el motor lo deshabilita de forma segura sin interrumpir la experiencia de usuario.
+
+## El Impacto (Resultado)
+La arquitectura **v4.0.0 GA** transformó una herramienta experimental en un motor robusto y fiable. DVGE es ahora capaz de manejar flujos de trabajo profesionales, garantizando que cada píxel renderizado sea idéntico en cada ejecución, con una seguridad de nivel empresarial y una integridad de datos del 100%.

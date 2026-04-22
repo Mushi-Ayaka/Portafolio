@@ -1,0 +1,221 @@
+.article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  color: var(--text-main);
+  animation: fadeIn 1s ease-out;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #fff 0%, #E44C30 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  max-width: 700px;
+}
+
+.subtitle strong {
+  color: var(--text-main);
+}
+
+.metaData {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  background: var(--bg-sidebar);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  align-items: center;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 2rem;
+}
+.metaInfo span { color: var(--text-muted); }
+.metaInfo strong { color: var(--text-main); margin-right: 0.5rem; }
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.secondaryLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.secondaryLink:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(228, 76, 48, 0.05);
+}
+
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  padding: 2.5rem;
+  background-color: var(--bg-sidebar);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+.card p, .cardHighlight p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+.card p em, .cardHighlight p em {
+  color: var(--text-main);
+  font-style: normal;
+}
+
+.cardHighlight {
+  padding: 2.5rem;
+  background-color: rgba(228, 76, 48, 0.1);
+  border: 1px solid #E44C30;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.cardHighlight .cardTitle {
+  color: #E44C30;
+}
+
+.mediaContainer {
+  width: 100%;
+}
+
+.demoVideo {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  display: block;
+}
+
+.engineeringSection {
+  padding-left: 2rem;
+  border-left: 4px solid #E44C30;
+}
+.engineeringSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+}
+.engineeringSection p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 3rem; }
+  .metaData { flex-direction: column; gap: 1rem; text-align: left; }
+}
+
+/* TOOLTIP NATIVO CSS */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  border-bottom: 1px dotted #E44C30;
+  color: #E44C30;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-out;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.demoLink {
+  color: #E44C30;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border: 1px solid #E44C30;
+  border-radius: 4px;
+}
+
+.demoLink:hover {
+  background-color: #E44C30;
+  color: #000;
+  transform: translateX(5px);
+}

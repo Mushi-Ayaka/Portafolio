@@ -24,7 +24,7 @@ export function Sidebar() {
           </Link>
           <div className="social-links">
             <a href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href={`mailto:${siteConfig.contactEmail}`}>Contacto</a>
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.contactEmail}`} target="_blank" rel="noopener noreferrer">Contacto</a>
           </div>
         </div>
       </div>
