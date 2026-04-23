@@ -7,7 +7,7 @@ export default function DVGEPage() {
       {/* 1. HERO Y CONTEXTO VITAL */}
       <header className={styles.hero}>
         <h1 className={styles.title}>Dynamic Vector Graphics Engine</h1>
-        <p className={styles.subtitle}>Arquitectura de grado broadcast v5.0.0 con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y Sandbox de Seguridad.</p>
+        <p className={styles.subtitle}>Arquitectura de grado broadcast v5.5.0 GA con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y el nuevo <strong>Knowledge Bridge AI</strong>.</p>
 
         <div className={styles.metaData}>
           <div className={styles.metaInfo}>
@@ -17,7 +17,7 @@ export default function DVGEPage() {
           
           <div className={styles.buttonGroup}>
             <a
-              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.0.0/DVGE-Setup-5.0.0.exe"
+              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.5.0/DVGE-Setup-5.5.0.exe"
               target="_blank"
               rel="noopener"
               className={styles.demoLink}
@@ -53,9 +53,9 @@ export default function DVGEPage() {
           </p>
         </div>
         <div className={styles.cardHighlight}>
-          <h2 className={styles.cardTitle}>Sandbox Inpenetrable</h2>
+          <h2 className={styles.cardTitle}>Knowledge Bridge AI</h2>
           <p>
-            Seguridad primero. Se implementó un entorno sellado mediante <strong>fakeWindow</strong> que bloquea el acceso de los plugins a las APIs del sistema host. Los gráficos corren en un aislamiento total, protegiendo la integridad del sistema operativo del usuario.
+            La v5.5 introduce la inyección de contexto nativa. Al arrastrar el PDF de reglas generado por el motor directamente a una IA, el asistente comprende instantáneamente las restricciones del Shadow DOM y el Sandbox, permitiendo generar código funcional al primer intento.
           </p>
         </div>
       </section>
@@ -73,9 +73,9 @@ export default function DVGEPage() {
 
       {/* 4. CIERRE ARQUITECTONICO I/O & RENDIMIENTO */}
       <section className={styles.engineeringSection}>
-        <h2>Persistencia y Rendimiento (v5.0.0)</h2>
+        <h2>Persistencia y Estabilidad (v5.5.0 GA)</h2>
         <p>
-          Para evitar la corrupción de proyectos, el motor utiliza un subsistema de <strong>I/O Atómico Asíncrono</strong>. Además, para la versión 5.0.0, se implementó una agresiva <strong>Estrategia de Pre-Bundling Estático y Desempaquetado Quirúrgico (ASAR)</strong>. Las dependencias críticas de renderizado (Remotion, Esbuild, FFmpeg) operan a nivel de disco físico, eliminando por completo los bloqueos de pipe (EPIPE/ENOENT) y optimizando el tiempo de construcción y arranque de la aplicación al máximo nivel industrial.
+          Para evitar la corrupción de proyectos, el motor utiliza un subsistema de <strong>I/O Atómico Asíncrono</strong>. En la versión 5.5.0, se ha perfeccionado el <strong>Data Probe Hydration</strong>, un sistema de hidratación de estado mediante servidores internos que garantiza una integridad del 100% en la transferencia de datos entre procesos, eliminando cuellos de botella en la renderización de gráficos complejos.
         </p>
       </section>
 

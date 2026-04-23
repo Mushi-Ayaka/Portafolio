@@ -11,9 +11,10 @@ export const projects: Project[] = [
   {
     id: 'dvge',
     title: 'DVGE: Dynamic Vector Graphics Engine',
-    description: 'App v4.1.5 GA para generacion de animaciones vectoriales. Persistencia atómica y sandbox de seguridad.',
+    description: 'App v5.5.0 para generacion de animaciones vectoriales. Persistencia atomica, sandbox de seguridad y sistema de plugins.',
     slug: 'dvge',
-    tag: 'Inspeccionar Motor'
+    tag: 'Inspeccionar Motor',
+    tooltip: 'Ecosistema en constante desarrollo que integra HTML, CSS, JS y WebGL en una aplicacion de escritorio.',
   },
   {
     id: 'twitter-clone',
