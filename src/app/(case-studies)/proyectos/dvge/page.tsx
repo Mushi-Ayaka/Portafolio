@@ -17,7 +17,7 @@ export default function DVGEPage() {
           
           <div className={styles.buttonGroup}>
             <a
-              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.5.0/DVGE-Setup-5.5.0.exe"
+              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe"
               target="_blank"
               rel="noopener"
               className={styles.demoLink}
