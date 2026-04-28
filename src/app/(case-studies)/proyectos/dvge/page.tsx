@@ -7,7 +7,7 @@ export default function DVGEPage() {
       {/* 1. HERO Y CONTEXTO VITAL */}
       <header className={styles.hero}>
         <h1 className={styles.title}>Dynamic Vector Graphics Engine</h1>
-        <p className={styles.subtitle}>Arquitectura de grado broadcast v5.5.0 GA con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y el nuevo <strong>Knowledge Bridge AI</strong>.</p>
+        <p className={styles.subtitle}>Arquitectura de grado broadcast v5.6.0 GA con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y el nuevo <strong>Knowledge Bridge AI</strong>.</p>
 
         <div className={styles.metaData}>
           <div className={styles.metaInfo}>
@@ -73,9 +73,9 @@ export default function DVGEPage() {
 
       {/* 4. CIERRE ARQUITECTONICO I/O & RENDIMIENTO */}
       <section className={styles.engineeringSection}>
-        <h2>Persistencia y Estabilidad (v5.5.0 GA)</h2>
+        <h2>Persistencia y Estabilidad (v5.6.0 GA)</h2>
         <p>
-          Para evitar la corrupción de proyectos, el motor utiliza un subsistema de <strong>I/O Atómico Asíncrono</strong>. En la versión 5.5.0, se ha perfeccionado el <strong>Data Probe Hydration</strong>, un sistema de hidratación de estado mediante servidores internos que garantiza una integridad del 100% en la transferencia de datos entre procesos, eliminando cuellos de botella en la renderización de gráficos complejos.
+          Para evitar la corrupción de proyectos, el motor utiliza un subsistema de <strong>I/O Atómico Asíncrono</strong>. En la versión 5.6.0, se introduce la <strong>Gestión Integral de Proyectos</strong>: renombrado y eliminación atómica desde la Galería, Control de Integridad de Plugins que bloquea proyectos con dependencias faltantes, y Auto-Fetch de Chromium y FFmpeg que elimina cualquier dependencia del entorno del usuario.
         </p>
       </section>
 

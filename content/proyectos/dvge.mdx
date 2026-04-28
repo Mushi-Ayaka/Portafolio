@@ -1,22 +1,26 @@
 ---
-title: "Dynamic Vector Graphics Engine (DVGE) v4.0.0"
+title: "Dynamic Vector Graphics Engine (DVGE) v5.6.0"
 role: "Lead Architect & Engine Developer"
-tag: "Broadcast Engine / Security / QA Audit"
+tag: "Broadcast Engine / Security / Rendering Pipeline"
 ---
 
-# Dynamic Vector Graphics Engine (DVGE) v4.0.0
+# Dynamic Vector Graphics Engine (DVGE) v5.6.0
 
 ## El Problema (Situación)
-El motor de gráficos vectoriales comenzó como un prototipo experimental para DaVinci Resolve. Sin embargo, al escalar, presentó vulnerabilidades críticas: el entorno de los plugins podía acceder al sistema host (fuga de sandbox), el renderizado no era determinístico (causando desincronización en clips de alta fidelidad) y el sistema de guardado era propenso a la corrupción de archivos durante apagones o cierres inesperados.
+El motor de gráficos vectoriales comenzó como un prototipo experimental para DaVinci Resolve. Al escalar, presentó vulnerabilidades críticas: el entorno de los plugins podía acceder al sistema host (fuga de sandbox), el renderizado no era determinístico (causando desincronización en clips de alta fidelidad) y el sistema de guardado era propenso a la corrupción de archivos durante apagones o cierres inesperados. Versiones posteriores añadieron dependencias frágiles del entorno del usuario (Chrome global, FFmpeg en PATH) que rompían la instalación en máquinas limpias.
 
 ## El Reto (Tarea)
-Elevar el motor a un estándar de **Grado de Producción Broadcast**. El objetivo era blindar la seguridad del sistema mediante un aislamiento total del entorno de ejecución, garantizar renders "Frame-Perfect" para exportaciones profesionales en ProRes 4444 y estabilizar la persistencia de datos mediante operaciones atómicas asíncronas.
+Elevar el motor a un estándar de **Grado de Producción Broadcast** completamente autónomo. El objetivo era blindar la seguridad mediante aislamiento total del entorno de ejecución, garantizar renders "Frame-Perfect" para exportaciones profesionales en ProRes 4444, estabilizar la persistencia de datos mediante operaciones atómicas asíncronas, y eliminar cualquier dependencia del entorno del usuario.
 
 ## La Ejecución Arquitectónica (Acción)
-*   **Sandbox de Seguridad (GA Implementation):** Se implementó un entorno de ejecución sellado basado en `fakeWindow`. El motor intercepta y anula el acceso a APIs peligrosas de Electron (`ipcRenderer`, `process`, `require`), encapsulando cada gráfico en una burbuja de seguridad inquebrantable.
-*   **API Determinística v4.0:** Se deprecó el uso de librerías basadas en tiempo real (GSAP) en favor de un objeto `ctx.timeline` nativo. Este sistema calcula el progreso exacto basándose en cuadros (*frames*), eliminando cualquier rastro de deriva temporal durante el renderizado.
+
+*   **Sandbox de Seguridad:** Se implementó un entorno de ejecución sellado basado en `fakeWindow`. El motor intercepta y anula el acceso a APIs peligrosas de Electron (`ipcRenderer`, `process`, `require`), encapsulando cada gráfico en una burbuja de seguridad inquebrantable mediante Shadow DOM.
+*   **API Determinística:** Se deprecó el uso de librerías basadas en tiempo real (GSAP) en favor de un objeto `ctx.timeline` nativo. Este sistema calcula el progreso exacto basándose en cuadros (*frames*), eliminando cualquier rastro de deriva temporal durante el renderizado.
 *   **I/O Atómico y Resiliente:** El sistema de persistencia se refactorizó para usar escrituras asíncronas en archivos temporales con renombrado atómico. Esto garantiza que un fallo en el disco nunca corrompa el archivo de proyecto original.
-*   **Graceful Degradation:** Se inyectaron fronteras de error (*Error Boundaries*) y bloques `try/catch` globales en el loop de 60fps. Si un plugin falla, el motor lo deshabilita de forma segura sin interrumpir la experiencia de usuario.
+*   **Graceful Degradation:** Se inyectaron Error Boundaries y bloques `try/catch` globales en el loop de 60fps. Si un plugin falla, el motor lo deshabilita de forma segura sin interrumpir la experiencia de usuario.
+*   **Auto-Fetch de Dependencias (v5.6.0):** El motor detecta y descarga automáticamente Chromium y FFmpeg en `%APPDATA%\DVGE\bin`, eliminando la dependencia de instalaciones globales del sistema.
+*   **Gestión Integral de Proyectos (v5.6.0):** Nueva interfaz de Galería con renombrado y eliminación atómica de proyectos vía IPC, y Control de Integridad de Plugins que bloquea la apertura de proyectos con dependencias faltantes.
+*   **Knowledge Bridge (v5.5.0+):** El motor compila sus reglas de sandbox y API en un PDF que se inyecta directamente en asistentes de IA mediante drag nativo de Electron, generando plugins compatibles al primer intento.
 
 ## El Impacto (Resultado)
-La arquitectura **v4.0.0 GA** transformó una herramienta experimental en un motor robusto y fiable. DVGE es ahora capaz de manejar flujos de trabajo profesionales, garantizando que cada píxel renderizado sea idéntico en cada ejecución, con una seguridad de nivel empresarial y una integridad de datos del 100%.
+La arquitectura **v5.6.0 GA** transformó una herramienta experimental en un motor broadcast completamente autónomo. DVGE no requiere configuración del entorno del usuario, garantiza que cada píxel renderizado sea idéntico en cada ejecución, y opera con seguridad de nivel empresarial e integridad de datos del 100%. El ecosistema de plugins es extensible por cualquier desarrollador web o asistente de IA sin conocimiento previo del motor.
