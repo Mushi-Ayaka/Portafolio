@@ -14,10 +14,10 @@ export default function DVGEPage() {
             <span><strong>Rol:</strong> Arquitecto de Software & Engine Dev</span>
             <span><strong>Stack:</strong> Electron, React, Remotion, Node.js</span>
           </div>
-          
+
           <div className={styles.buttonGroup}>
             <a
-              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe"
+              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe"
               target="_blank"
               rel="noopener"
               className={styles.demoLink}
