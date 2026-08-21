@@ -5,10 +5,10 @@ import { siteConfig } from "@/config/site";
 import Link from "next/link";
 
 const SECTIONS = [
-  { id: "presentacion", label: "01. Presentación" },
-  { id: "skills", label: "02. Stack Técnico" },
-  { id: "flujo", label: "03. Metodología" },
-  { id: "proyectos", label: "04. Case Studies" },
+  { id: "presentacion", label: "01. Presentación", short: "Inicio" },
+  { id: "skills", label: "02. Stack Técnico", short: "Stack" },
+  { id: "flujo", label: "03. Metodología", short: "Método" },
+  { id: "proyectos", label: "04. Case Studies", short: "Casos" },
 ];
 
 export function Sidebar() {
@@ -38,9 +38,6 @@ export function Sidebar() {
         <div className="profile">
           <h1 className="name">{siteConfig.name}</h1>
           <p className="role">{siteConfig.role}</p>
-          <Link href={siteConfig.cvUrl} className="btn-cv mobile-cv-btn">
-            Ver Currículum (CV)
-          </Link>
         </div>
 
         <nav className="navigation">
@@ -50,9 +47,13 @@ export function Sidebar() {
               href={`/#${s.id}`}
               className={active === s.id ? "active" : ""}
             >
-              {s.label}
+              <span className="nav-full">{s.label}</span>
+              <span className="nav-short">{s.short}</span>
             </Link>
           ))}
+          <Link href={siteConfig.cvUrl} className="nav-cv">
+            CV
+          </Link>
         </nav>
 
         <div className="contact-actions">
