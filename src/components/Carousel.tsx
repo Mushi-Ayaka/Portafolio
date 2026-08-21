@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import styles from "./Carousel.module.css";
 
 export function Carousel({
@@ -18,6 +18,25 @@ export function Carousel({
     el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: "smooth" });
   };
 
+  // Rueda -> scroll horizontal, pero deja pasar el scroll vertical de la
+  // pagina cuando el carrusel ya esta en uno de sus extremos (evita trapar).
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      const delta =
+        Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (delta === 0) return;
+      const atStart = el.scrollLeft <= 0;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+      if ((delta < 0 && atStart) || (delta > 0 && atEnd)) return;
+      e.preventDefault();
+      el.scrollLeft += delta;
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
   return (
     <div className={styles.container}>
       <button
@@ -28,7 +47,22 @@ export function Carousel({
       >
         &#8249;
       </button>
-      <div className={styles.viewport} ref={ref} aria-label={ariaLabel}>
+      <div
+        className={styles.viewport}
+        ref={ref}
+        aria-label={ariaLabel}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            scroll(1);
+          }
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            scroll(-1);
+          }
+        }}
+      >
         {children}
       </div>
       <button
