@@ -2,7 +2,7 @@ import styles from '../page.module.css';
 import { Carousel } from '@/components/Carousel';
 import { ItemCard } from '@/components/ItemCard';
 import { TechIcon } from '@/components/TechIcon';
-import { skills, projects, blogs } from '@/data/portfolio';
+import { skills, projects } from '@/data/portfolio';
 
 export default function Home() {
   return (
@@ -47,20 +47,6 @@ export default function Home() {
             <ItemCard key={p.id} item={p} moreHref={p.detailHref} />
           ))}
         </Carousel>
-      </section>
-
-      {/* 05. BLOGS */}
-      <section id="blogs" className={`snap-section focus-item ${styles.section}`}>
-        <h2 className={styles.sectionTitle}>Blogs de Trabajos</h2>
-        {blogs.length > 0 ? (
-          <Carousel ariaLabel="Blogs de trabajos">
-            {blogs.map((b) => (
-              <ItemCard key={b.id} item={b} moreHref={b.detailHref} />
-            ))}
-          </Carousel>
-        ) : (
-          <p className={styles.leadText}>Próximamente: aquí irán tus blogs de trabajos.</p>
-        )}
       </section>
     </div>
   );
