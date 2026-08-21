@@ -16,7 +16,7 @@ export default function CVLayout({
 }) {
   return (
     <html lang="es" className={spaceGrotesk.variable}>
-      <body style={{ backgroundColor: '#fff', color: '#000' }}>
+      <body style={{ backgroundColor: '#fff', color: '#000', overflowY: 'auto', minHeight: '100vh' }}>
         {children}
       </body>
     </html>

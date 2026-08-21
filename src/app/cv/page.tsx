@@ -81,11 +81,16 @@ export default function CVPage() {
   };
 
   return (
-    <div style={{ backgroundColor: '#f9f9f9', minHeight: '100vh', padding: '2rem 0' }}>
-      <Link href="/" className={styles.backBtn}>
-        ← Volver al Portafolio
-      </Link>
-      
+    <div className={styles.page}>
+      <div className={styles.topBar}>
+        <Link href="/" className={styles.backBtn}>
+          ← Volver al Portafolio
+        </Link>
+        <button onClick={handlePrint} className={styles.printBtnTop}>
+          🖨️ Imprimir / Guardar en PDF
+        </button>
+      </div>
+
       <div className={styles.cvContainer}>
         {/* Header */}
         <header className={styles.header}>
@@ -161,10 +166,6 @@ export default function CVPage() {
           ))}
         </section>
       </div>
-
-      <button onClick={handlePrint} className={styles.printBtn}>
-        🖨️ Imprimir / Guardar en PDF
-      </button>
     </div>
   );
 }
