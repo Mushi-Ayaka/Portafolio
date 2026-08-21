@@ -7,7 +7,7 @@ export interface CaseStudyClientData {
  * [Security] DTO Transformer: RSC to Client
  * Garantiza que absolutamente ninguna propiedad sensible cruce la frontera del cliente.
  */
-export function toClientData(serverData: Record<string, any>): CaseStudyClientData {
+export function toClientData(serverData: Record<string, unknown>): CaseStudyClientData {
   const result: CaseStudyClientData = {};
   
   if (serverData && typeof serverData === 'object') {

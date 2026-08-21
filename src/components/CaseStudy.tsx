@@ -125,7 +125,6 @@ export function CaseStudy({
             <div className={styles.gallery}>
               {gallery.map((g, i) =>
                 g.src ? (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <div className={styles.shot} key={i}>
                     <img src={g.src} alt={g.caption} />
                   </div>
