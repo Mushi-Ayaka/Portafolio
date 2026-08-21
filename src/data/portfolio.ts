@@ -8,6 +8,7 @@ export type Item = {
   role?: string;
   architecture?: string;
   cover?: string;
+  detailHref?: string;
   links?: ItemLink[];
 };
 
@@ -49,6 +50,7 @@ export const projects: Item[] = [
     role: "Full-Stack",
     architecture:
       "Fullstack desacoplado: cliente React 19 + Vite y servidor Express 4 con capas controllers/models/routes. Persistencia real en PostgreSQL vía Prisma 7 + Supabase y actualizaciones optimistas con TanStack Query v5 (invalidation). Cubierto por tests con Vitest + Testing Library.",
+    detailHref: "/proyectos/twitter-clone",
     links: [
       { label: "Demo", href: "https://practica-con-react-client.vercel.app" },
       { label: "Código", href: "https://github.com/Mushi-Ayaka/practica-con-react" },
@@ -74,6 +76,7 @@ export const projects: Item[] = [
     role: "TypeScript / Engine",
     architecture:
       "Motor headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema, sandbox seguro en Shadow DOM para plugins, easing/springs y motores de layout responsive (remapX/remapY). Código estilo SOLID, publicado como @dvge/core (MIT) en npm.",
+    detailHref: "/proyectos/dvge",
     links: [
       {
         label: "Código",

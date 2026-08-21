@@ -18,9 +18,9 @@ import {
   SiPython,
   SiJson,
 } from "react-icons/si";
-import type { ComponentType, SVGProps } from "react";
+import type { IconType } from "react-icons";
 
-const ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+const ICONS: Record<string, IconType> = {
   React: SiReact,
   "Next.js": SiNextdotjs,
   TypeScript: SiTypescript,
