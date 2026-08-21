@@ -50,9 +50,14 @@
 
 @media (max-width: 768px) {
   .btn {
-    display: none;
+    display: flex;
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+    flex: 0 0 auto;
   }
   .viewport {
     scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
   }
 }

@@ -171,6 +171,7 @@ a:hover {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  touch-action: pan-y;
 }
 
 /* CLASE BASE PARA CADA SECCIÓN DENTRO DEL MAIN */
@@ -265,6 +266,7 @@ a:hover {
     overflow-y: auto;
     scroll-snap-type: y proximity;
     scroll-padding-bottom: 7rem;
+    touch-action: pan-y;
   }
 
   .snap-section {
