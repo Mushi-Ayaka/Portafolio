@@ -35,23 +35,23 @@ export function ItemCard({ item, moreHref }: { item: Item; moreHref?: string }) 
             </span>
           ))}
         </div>
+      </div>
 
-        <div className={styles.footer}>
-          {item.links && item.links.length > 0 && (
-            <div className={styles.links}>
-              {item.links.map((l) => (
-                <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
-                  {l.label}
-                </a>
-              ))}
-            </div>
-          )}
-          {moreHref && (
-            <Link href={moreHref} className={styles.more}>
-              Ver Más...
-            </Link>
-          )}
-        </div>
+      <div className={styles.footer}>
+        {item.links && item.links.length > 0 && (
+          <div className={styles.links}>
+            {item.links.map((l) => (
+              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                {l.label}
+              </a>
+            ))}
+          </div>
+        )}
+        {moreHref && (
+          <Link href={moreHref} className={styles.more}>
+            Ver Más →
+          </Link>
+        )}
       </div>
     </article>
   );
