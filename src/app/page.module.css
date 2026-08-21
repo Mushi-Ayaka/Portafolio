@@ -34,9 +34,19 @@
 }
 
 .skillCard {
+  flex: 0 0 auto;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1rem;
   background-color: var(--bg-card);
-  padding: 2rem;
-  border-radius: 12px;
+  border-radius: 14px;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 12px 28px -14px rgba(15, 23, 42, 0.18);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
@@ -44,14 +54,8 @@
   transform: translateY(-3px);
   box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 18px 36px -16px rgba(6, 182, 212, 0.25);
 }
-.skillCard h3 {
+.skillCard svg {
   color: var(--accent-primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-.skillCard p {
-  color: var(--text-muted);
-  font-size: 1rem;
 }
 
 /* WORKFLOW */

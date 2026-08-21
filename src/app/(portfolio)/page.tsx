@@ -1,5 +1,8 @@
 import styles from '../page.module.css';
-import { ProjectCarousel } from '@/components/projects/ProjectCarousel';
+import { Carousel } from '@/components/Carousel';
+import { ItemCard } from '@/components/ItemCard';
+import { TechIcon } from '@/components/TechIcon';
+import { skills, projects, blogs } from '@/data/portfolio';
 
 export default function Home() {
   return (
@@ -8,34 +11,24 @@ export default function Home() {
       <section id="presentacion" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>Sobre Mí.</h2>
         <p className={styles.leadText}>
-          Soy un Desarrollador Full-Stack especializado en la triada <strong>React, Node.js y Bases de Datos Relacionales</strong>. Mi valor diferencial radica en el rigor técnico: no escribo código guiado por intuición. Desarrollo sistemas web robustos fundamentados en <strong>Design-Driven Development</strong> y <strong>Pruebas Estrictas</strong>, garantizando que rendimiento y escalabilidad coexistan desde el diseño hasta producción.
+          Soy un Desarrollador Web especializado en <strong>React, Node.js y Bases de Datos Relacionales</strong>. Mi valor diferencial radica en el rigor técnico: no escribo código guiado por intuición. Desarrollo sistemas web robustos fundamentados en <strong>Design-Driven Development</strong> y <strong>Pruebas Estrictas</strong>, garantizando que rendimiento y escalabilidad coexistan desde el diseño hasta producción.
         </p>
       </section>
 
       {/* 02. SKILLS */}
       <section id="skills" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>Stack de Herramientas</h2>
-        <div className={styles.skillsGrid}>
-          <div className={styles.skillCard}>
-            <h3>Desarrollo Frontend</h3>
-            <p>React 19, Next.js (App Router), Vite, Zustand, TanStack Query y Arquitectura CSS Vanilla.</p>
-          </div>
-          <div className={styles.skillCard}>
-            <h3>Infraestructura Backend</h3>
-            <p>Node.js, Express, ORMs pesados (Prisma), PostgreSQL y Supabase.</p>
-          </div>
-          <div className={styles.skillCard}>
-            <h3>Calidad y Rigor</h3>
-            <p>Desarrollo Basado en Especificaciones (SDD), Patrón DTO, Property-Based Testing y Modelado de Amenazas.</p>
-          </div>
-          <div className={styles.skillCard}>
-            <h3>Automatización</h3>
-            <p>Programación asistida por IA, Versionado Semántico y Despliegues con Cero Downtime.</p>
-          </div>
-        </div>
+        <Carousel ariaLabel="Tecnologías que uso">
+          {skills.map((s) => (
+            <div key={s} className={styles.skillCard}>
+              <TechIcon name={s} size={30} />
+              <span>{s}</span>
+            </div>
+          ))}
+        </Carousel>
       </section>
 
-      {/* 03. FLUJO DE TRABAJO */}
+      {/* 03. FLUJO */}
       <section id="flujo" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>El Proceso</h2>
         <ol className={styles.workflowList}>
@@ -46,10 +39,28 @@ export default function Home() {
         </ol>
       </section>
 
-      {/* 04. PROYECTOS / EVIDENCIAS */}
+      {/* 04. PROYECTOS */}
       <section id="proyectos" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>Casos de Estudio</h2>
-        <ProjectCarousel />
+        <Carousel ariaLabel="Proyectos">
+          {projects.map((p) => (
+            <ItemCard key={p.id} item={p} />
+          ))}
+        </Carousel>
+      </section>
+
+      {/* 05. BLOGS */}
+      <section id="blogs" className={`snap-section focus-item ${styles.section}`}>
+        <h2 className={styles.sectionTitle}>Blogs de Trabajos</h2>
+        {blogs.length > 0 ? (
+          <Carousel ariaLabel="Blogs de trabajos">
+            {blogs.map((b) => (
+              <ItemCard key={b.id} item={b} />
+            ))}
+          </Carousel>
+        ) : (
+          <p className={styles.leadText}>Próximamente: aquí irán tus blogs de trabajos.</p>
+        )}
       </section>
     </div>
   );
