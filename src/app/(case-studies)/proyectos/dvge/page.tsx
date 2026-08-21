@@ -1,84 +1,86 @@
-import styles from './dvge.module.css';
+import { CaseStudy, CaseTooltip, type Brand } from "@/components/CaseStudy";
+
+const brand: Brand = {
+  bg: "#0a0707",
+  surface: "#161010",
+  primary: "#e44c30",
+  accent: "#ff6b4a",
+  text: "#fdf2f0",
+  muted: "#9a6b63",
+  border: "rgba(228,76,48,0.22)",
+};
 
 export default function DVGEPage() {
   return (
-    <article className={styles.article}>
-
-      {/* 1. HERO Y CONTEXTO VITAL */}
-      <header className={styles.hero}>
-        <h1 className={styles.title}>Dynamic Vector Graphics Engine</h1>
-        <p className={styles.subtitle}>Arquitectura de grado broadcast v5.6.0 GA con <strong><span className={styles.tooltip} data-tooltip="Consistencia idéntica de cuadros en cada renderizado.">Determinismo Total</span></strong> y el nuevo <strong>Knowledge Bridge AI</strong>.</p>
-
-        <div className={styles.metaData}>
-          <div className={styles.metaInfo}>
-            <span><strong>Rol:</strong> Arquitecto de Software & Engine Dev</span>
-            <span><strong>Stack:</strong> Electron, React, Remotion, Node.js</span>
-          </div>
-
-          <div className={styles.buttonGroup}>
-            <a
-              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe"
-              target="_blank"
-              rel="noopener"
-              className={styles.demoLink}
-            >
-              Descarga Directa (Win x64) ↓
-            </a>
-            <a
-              href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases"
-              target="_blank"
-              rel="noopener"
-              className={styles.secondaryLink}
-            >
-              Ver Todas las Versiones
-            </a>
-            <a
-              href="https://mushi-ayaka.github.io/DVGE-Docs/"
-              target="_blank"
-              rel="noopener"
-              className={styles.secondaryLink}
-            >
-              Página de Documentación
-            </a>
-          </div>
-        </div>
-      </header>
-
-      {/* 2. EXPLICACIÓN INMERSIVA (Problema vs Solución) */}
-      <section className={styles.gridSection}>
-        <div className={styles.card}>
-          <h2 className={styles.cardTitle}>El Caos Temporal</h2>
-          <p>
-            Los motores de gráficos tradicionales dependen de librerías de tiempo real que fallan al exportar video cuadro a cuadro. El resultado: <em>frames</em> saltados y desincronización. DVGE resuelve esto mediante una arquitectura <strong>Frame-Math</strong> pura que aniquila la deriva temporal.
-          </p>
-        </div>
-        <div className={styles.cardHighlight}>
-          <h2 className={styles.cardTitle}>Knowledge Bridge AI</h2>
-          <p>
-            La v5.5 introduce la inyección de contexto nativa. Al arrastrar el PDF de reglas generado por el motor directamente a una IA, el asistente comprende instantáneamente las restricciones del Shadow DOM y el Sandbox, permitiendo generar código funcional al primer intento.
-          </p>
-        </div>
-      </section>
-
-      <section className={styles.mediaContainer}>
-        <video
-          className={styles.demoVideo}
-          src="/media/demoDVGE.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      </section>
-
-      {/* 4. CIERRE ARQUITECTONICO I/O & RENDIMIENTO */}
-      <section className={styles.engineeringSection}>
-        <h2>Persistencia y Estabilidad (v5.6.0 GA)</h2>
-        <p>
-          Para evitar la corrupción de proyectos, el motor utiliza un subsistema de <strong>I/O Atómico Asíncrono</strong>. En la versión 5.6.0, se introduce la <strong>Gestión Integral de Proyectos</strong>: renombrado y eliminación atómica desde la Galería, Control de Integridad de Plugins que bloquea proyectos con dependencias faltantes, y Auto-Fetch de Chromium y FFmpeg que elimina cualquier dependencia del entorno del usuario.
-        </p>
-      </section>
-
-    </article>
+    <CaseStudy
+      brand={brand}
+      eyebrow="Caso de Estudio · Motor de Gráficos"
+      title="Dynamic Vector Graphics Engine"
+      subtitle={
+        <>
+          Arquitectura de grado broadcast con{" "}
+          <strong>
+            <CaseTooltip
+              term="Determinismo Total"
+              definition="Consistencia idéntica de cuadros en cada renderizado."
+            />
+          </strong>{" "}
+          y el nuevo Knowledge Bridge AI.
+        </>
+      }
+      role="Arquitecto de Software & Engine Dev"
+      stack="TypeScript · Shadow DOM · Plugins · npm (@dvge/core)"
+      links={[
+        {
+          label: "Descarga (Win x64)",
+          href: "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe",
+          primary: true,
+        },
+        {
+          label: "Documentación",
+          href: "https://mushi-ayaka.github.io/DVGE-Docs/",
+        },
+      ]}
+      problem={{
+        title: "El Caos Temporal",
+        body: (
+          <>
+            Los motores tradicionales dependen de librerías de tiempo real que
+            fallan al exportar video cuadro a cuadro: <em>frames</em> saltados y
+            desincronización. DVGE resuelve esto con una arquitectura{" "}
+            <em>Frame-Math</em> pura que aniquila la deriva temporal.
+          </>
+        ),
+      }}
+      solution={{
+        title: "Knowledge Bridge AI",
+        body: (
+          <>
+            La v5.5 introduce inyección de contexto nativa. Al arrastrar el PDF
+            de reglas del motor a una IA, el asistente comprende al instante las
+            restricciones del Shadow DOM y el Sandbox, generando código
+            funcional al primer intento.
+          </>
+        ),
+      }}
+      video="/media/demoDVGE.mp4"
+      gallery={[
+        { caption: "Editor de escenas en vivo" },
+        { caption: "Plugin Sandbox" },
+      ]}
+      engineering={{
+        title: "Persistencia y Estabilidad (v5.6.0 GA)",
+        body: (
+          <>
+            Subsistema de <em>I/O Atómico Asíncrono</em> para evitar corrupción
+            de proyectos. Gestión Integral de Proyectos: renombrado y
+            eliminación atómica desde la Galería, Control de Integridad de
+            Plugins que bloquea dependencias faltantes, y Auto-Fetch de
+            Chromium y FFmpeg que elimina cualquier dependencia del entorno del
+            usuario.
+          </>
+        ),
+      }}
+    />
   );
 }

@@ -65,6 +65,7 @@ export const projects: Item[] = [
     role: "Full-Stack / Desktop",
     architecture:
       "App de broadcast multi-proceso en Electron (main/renderer) con React + TypeScript y motor de composición basado en Remotion para gráficos en vivo.",
+    detailHref: "/proyectos/ember-motion-studio",
     links: [{ label: "Landing", href: "https://ember-motion-studio-landing.vercel.app/es/" }],
   },
   {
@@ -93,6 +94,7 @@ export const projects: Item[] = [
     role: "C++ / Compiladores",
     architecture:
       "Pipeline de compilación multi-nivel con 4 dialectos por dominio (GTE → PTR → CTP → TB) y lowering progresivo hasta formato comprimido lossless. 100% C++17, sin dependencias de runtime.",
+    detailHref: "/proyectos/mlir-campo-tensorial",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/MLIR-CampoTensorial" },
     ],
@@ -106,6 +108,7 @@ export const projects: Item[] = [
     role: "C++ / Lenguajes",
     architecture:
       "Lenguaje con compilador propio (lexer, parser, AST, resolver, emisor RIH en JSON, evaluador SDF) y backend de render por ray marching. Escenas 3D/4D por SDF sin mallas, puramente algebraico.",
+    detailHref: "/proyectos/lenguaje-hermetico",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/lenguaje-hermetico" },
     ],
@@ -119,10 +122,9 @@ export const projects: Item[] = [
     role: "C++ / Graphics",
     architecture:
       "Arquitectura de 5 capas (Visor Win32, Scene con BVH, Render por ray marching en CPU, RHI con DirectX 11 compute shader, OS). Carga escenas RIH (JSON) y renderiza SDF en tiempo real.",
+    detailHref: "/proyectos/motor-grafico",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/motor-grafico" },
     ],
   },
 ];
-
-export const blogs: Item[] = [];

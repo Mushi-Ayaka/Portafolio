@@ -1,65 +1,89 @@
-import styles from './twitter.module.css';
+import { CaseStudy, CaseTooltip, type Brand } from "@/components/CaseStudy";
+
+const brand: Brand = {
+  bg: "#ffffff",
+  surface: "#f7f9f9",
+  primary: "#1d9bf0",
+  accent: "#0a66c2",
+  text: "#0f1419",
+  muted: "#536471",
+  border: "rgba(15,20,25,0.12)",
+};
 
 export default function TwitterClonePage() {
   return (
-    <article className={styles.article}>
-
-      {/* 1. HERO Y CONTEXTO VITAL */}
-      <header className={styles.hero}>
-        <h1 className={styles.title}>Twitter Follow Card Clone</h1>
-        <p className={styles.subtitle}>Escalabilidad técnica para alcanzar el estado <strong><span className={styles.tooltip} data-tooltip="UX fluida que elimina los Spinners simulando 0 latencia.">Zero-Flicker UX</span></strong>.</p>
-
-        <div className={styles.metaData}>
-          <span><strong>Rol:</strong> Arquitecto Frontend/Backend</span>
-          <span><strong>Tecnología Vena:</strong> React, Node.js, Prisma, Vercel</span>
-          <a 
-            href="https://practica-con-react-client.vercel.app/" 
-            target="_blank" 
-            rel="noopener" 
-            className={styles.demoLink}
-          >
-            Ver Demo en Vivo →
-          </a>
-        </div>
-      </header>
-
-      {/* 2. EXPLICACIÓN INMERSIVA (Problema vs Solución) */}
-      <section className={styles.gridSection}>
-        <div className={styles.card}>
-          <h2 className={styles.cardTitle}>La Falla Común</h2>
-          <p>
-            Al hacer click en un botón de Seguir, una app inexperta sufre de <em>Loadings</em> invasivos y pérdida de estado si el usuario refresca por accidente. Las arquitecturas básicas rompen la inmersión del consumidor al entorpecer con *spinners* o peticiones mal encapsuladas.
-          </p>
-        </div>
-        <div className={styles.cardHighlight}>
-          <h2 className={styles.cardTitle}>Optimismo Frontend</h2>
-          <p>
-            Despedimos en cascada los indicadores de carga. Usando <strong>TanStack React Query</strong> y concurrencia optimista, la Interfaz de Usuario reacciona en estado <strong>isPending</strong>.
-            Al darle Clic, visualmente ya estás siguiendo a esta persona instantáneamente. El <em>Request</em> asíncrono viaja en las sombras para blindar la BD. Si fracasa, se autorevierte sin que el cliente sospeche.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. BLOQUE MULTIMEDIA DEMO REAL */}
-      <section className={styles.mediaContainer}>
-        <video 
-          className={styles.demoVideo}
-          src="/media/demo.mp4" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-        />
-      </section>
-
-      {/* 4. CIERRE ARQUITECTONICO BACKEND */}
-      <section className={styles.engineeringSection}>
-        <h2>Persistencia Bajo Presión</h2>
-        <p>
-          En el Backend, un clon necesita soportar ráfagas transaccionales intensas. Inyectar Supabase es poderoso, pero sin <strong>PGBouncer</strong>, el entorno Serverless satura los túneles vacantes haciendo crash bajo Dev <strong>Hot Reloads</strong>. La base fue mitigada en la capa de tunelización, asegurándome de proveer una resistencia extrema y previniendo el agotamiento del Node Event Loop al sincronizar mutaciones constantes.
-        </p>
-      </section>
-
-    </article>
+    <CaseStudy
+      brand={brand}
+      eyebrow="Caso de Estudio · Web Full-Stack"
+      title="Twitter / X Follow Card"
+      subtitle={
+        <>
+          Escalabilidad técnica para alcanzar el estado{" "}
+          <strong>
+            <CaseTooltip
+              term="Zero-Flicker UX"
+              definition="UX fluida que elimina los spinners simulando 0 latencia."
+            />
+          </strong>{" "}
+          en una red social real.
+        </>
+      }
+      role="Arquitecto Frontend / Backend"
+      stack="React 19 · Vite · Node.js · Express · Prisma · Supabase · TanStack Query"
+      links={[
+        {
+          label: "Ver Demo en Vivo",
+          href: "https://practica-con-react-client.vercel.app",
+          primary: true,
+        },
+        {
+          label: "Código",
+          href: "https://github.com/Mushi-Ayaka/practica-con-react",
+        },
+      ]}
+      problem={{
+        title: "La Falla Común",
+        body: (
+          <>
+            Al hacer clic en Seguir, una app inexperta sufre de{" "}
+            <em>loadings</em> invasivos y pérdida de estado si el usuario
+            refresca por accidente. Las arquitecturas básicas rompen la
+            inmersión del consumidor con spinners o peticiones mal
+            encapsuladas.
+          </>
+        ),
+      }}
+      solution={{
+        title: "Optimismo Frontend",
+        body: (
+          <>
+            Despedimos en cascada los indicadores de carga. Usando{" "}
+            <em>TanStack React Query</em> y concurrencia optimista, la interfaz
+            reacciona en estado <em>isPending</em>: al darle clic, ya estás
+            siguiendo a la persona instantáneamente mientras el request viaja
+            en las sombras para blindar la BD. Si fracasa, se autorevierte sin
+            que el cliente lo note.
+          </>
+        ),
+      }}
+      video="/media/demo.mp4"
+      gallery={[
+        { caption: "Tarjeta de seguimiento" },
+        { caption: "Estado optimista isPending" },
+      ]}
+      engineering={{
+        title: "Persistencia Bajo Presión",
+        body: (
+          <>
+            En el backend, un clon necesita soportar ráfagas transaccionales
+            intensas. Inyectar Supabase es poderoso, pero sin{" "}
+            <em>PGBouncer</em> el entorno serverless satura los túneles y hace
+            crash bajo hot reloads. Mitigado en la capa de tunelización para
+            resistencia extrema y evitar agotar el Node Event Loop al sincronizar
+            mutaciones constantes.
+          </>
+        ),
+      }}
+    />
   );
 }

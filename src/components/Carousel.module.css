@@ -70,9 +70,4 @@
   .btn:last-of-type {
     right: 0.2rem;
   }
-  .viewport {
-    align-items: flex-start;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-  }
 }
