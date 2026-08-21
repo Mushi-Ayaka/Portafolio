@@ -8,7 +8,7 @@ const SECTIONS = [
   { id: "presentacion", label: "01. Presentación", short: "Inicio" },
   { id: "skills", label: "02. Stack Técnico", short: "Stack" },
   { id: "flujo", label: "03. Metodología", short: "Método" },
-  { id: "proyectos", label: "04. Case Studies", short: "Casos" },
+  { id: "proyectos", label: "04. Casos de Estudio", short: "Casos" },
 ];
 
 export function Sidebar() {

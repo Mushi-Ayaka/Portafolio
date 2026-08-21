@@ -25,11 +25,11 @@ export default function Home() {
             <p>Node.js, Express, ORMs pesados (Prisma), PostgreSQL y Supabase.</p>
           </div>
           <div className={styles.skillCard}>
-            <h3>Certidumbre Analítica</h3>
+            <h3>Calidad y Rigor</h3>
             <p>Desarrollo Basado en Especificaciones (SDD), Patrón DTO, Property-Based Testing y Modelado de Amenazas.</p>
           </div>
           <div className={styles.skillCard}>
-            <h3>Cultura de Automatización</h3>
+            <h3>Automatización</h3>
             <p>Programación asistida por IA, Versionado Semántico y Despliegues con Cero Downtime.</p>
           </div>
         </div>
@@ -39,16 +39,16 @@ export default function Home() {
       <section id="flujo" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>El Proceso</h2>
         <ol className={styles.workflowList}>
-          <li><strong>Especificación Estricta:</strong> Extraigo, debato y audito las fallas arquitectónicas del requerimiento antes de tocar el teclado.</li>
-          <li><strong>Diseño:</strong> Elaboro mapas de interfaces, diseño los esquemas de bases de datos y orquesto la tolerancia a fallos.</li>
-          <li><strong>Ejecución (AI-Assisted):</strong> Codifico de manera operativa bajo capas inquebrantables de validación e inyección continua.</li>
-          <li><strong>Garantía Total:</strong> Ejecuto escrutinios y aplico auditorías cruzadas. El software que emito sale con su propia bitácora de changelog inmaculada.</li>
+          <li><strong>Especificación Estricta</strong> <em>(entender bien qué se necesita antes de programar)</em>: Extraigo, debato y audito las fallas arquitectónicas del requerimiento antes de tocar el teclado.</li>
+          <li><strong>Diseño</strong> <em>(planeo cómo se verá y cómo guardará la información)</em>: Elaboro mapas de interfaces, diseño los esquemas de bases de datos y orquesto la tolerancia a fallos.</li>
+          <li><strong>Ejecución (con IA)</strong> <em>(escribo el código con ayuda de IA, pero verificando todo)</em>: Codifico de manera operativa bajo capas inquebrantables de validación e inyección continua.</li>
+          <li><strong>Garantía Total</strong> <em>(reviso y compruebo que funcione antes de entregarlo)</em>: Ejecuto escrutinios y aplico auditorías cruzadas. El software que emito sale con su propia bitácora de changelog inmaculada.</li>
         </ol>
       </section>
 
       {/* 04. PROYECTOS / EVIDENCIAS */}
       <section id="proyectos" className={`snap-section focus-item ${styles.section}`}>
-        <h2 className={styles.sectionTitle}>La Evidencia</h2>
+        <h2 className={styles.sectionTitle}>Casos de Estudio</h2>
         <ProjectCarousel />
       </section>
     </div>
