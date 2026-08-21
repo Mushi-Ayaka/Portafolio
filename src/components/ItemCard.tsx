@@ -1,8 +1,9 @@
 import styles from "./ItemCard.module.css";
 import { TechIcon } from "./TechIcon";
+import Link from "next/link";
 import type { Item } from "@/data/portfolio";
 
-export function ItemCard({ item }: { item: Item }) {
+export function ItemCard({ item, moreHref }: { item: Item; moreHref?: string }) {
   return (
     <article className={styles.card}>
       {item.role && <span className={styles.role}>{item.role}</span>}
@@ -20,6 +21,13 @@ export function ItemCard({ item }: { item: Item }) {
         <h3 className={styles.title}>{item.title}</h3>
         <p className={styles.desc}>{item.description}</p>
 
+        {item.architecture && (
+          <p className={styles.architecture}>
+            <span className={styles.archLabel}>Arquitectura</span>
+            {item.architecture}
+          </p>
+        )}
+
         <div className={styles.techs}>
           {item.tech.map((t) => (
             <span key={t} className={styles.tech} title={t}>
@@ -28,15 +36,22 @@ export function ItemCard({ item }: { item: Item }) {
           ))}
         </div>
 
-        {item.links && item.links.length > 0 && (
-          <div className={styles.links}>
-            {item.links.map((l) => (
-              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
-                {l.label}
-              </a>
-            ))}
-          </div>
-        )}
+        <div className={styles.footer}>
+          {item.links && item.links.length > 0 && (
+            <div className={styles.links}>
+              {item.links.map((l) => (
+                <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          )}
+          {moreHref && (
+            <Link href={moreHref} className={styles.more}>
+              Ver Más...
+            </Link>
+          )}
+        </div>
       </div>
     </article>
   );

@@ -44,7 +44,7 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Casos de Estudio</h2>
         <Carousel ariaLabel="Proyectos">
           {projects.map((p) => (
-            <ItemCard key={p.id} item={p} />
+            <ItemCard key={p.id} item={p} moreHref={`/proyectos/${p.id}`} />
           ))}
         </Carousel>
       </section>
@@ -55,7 +55,7 @@ export default function Home() {
         {blogs.length > 0 ? (
           <Carousel ariaLabel="Blogs de trabajos">
             {blogs.map((b) => (
-              <ItemCard key={b.id} item={b} />
+              <ItemCard key={b.id} item={b} moreHref={`/proyectos/${b.id}`} />
             ))}
           </Carousel>
         ) : (

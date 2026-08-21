@@ -6,6 +6,7 @@ export type Item = {
   description: string;
   tech: string[];
   role?: string;
+  architecture?: string;
   cover?: string;
   links?: ItemLink[];
 };
@@ -32,7 +33,7 @@ export const projects: Item[] = [
     id: "twitter-follow-card",
     title: "Twitter / X Follow Card",
     description:
-      "Clon de la tarjeta de seguimiento de X (Twitter): frontend en React 19 + Vite, backend Node/Express, datos con Prisma + Supabase y caché con TanStack Query.",
+      "Clon de la tarjeta de seguimiento de X (Twitter) con persistencia real de datos: frontend en React 19 + Vite y backend Node/Express con Prisma + Supabase.",
     tech: [
       "React",
       "Vite",
@@ -43,8 +44,11 @@ export const projects: Item[] = [
       "Supabase",
       "Prisma",
       "TanStack Query",
+      "CSS",
     ],
     role: "Full-Stack",
+    architecture:
+      "Fullstack desacoplado: cliente React 19 + Vite y servidor Express 4 con capas controllers/models/routes. Persistencia real en PostgreSQL vía Prisma 7 + Supabase y actualizaciones optimistas con TanStack Query v5 (invalidation). Cubierto por tests con Vitest + Testing Library.",
     links: [
       { label: "Demo", href: "https://practica-con-react-client.vercel.app" },
       { label: "Código", href: "https://github.com/Mushi-Ayaka/practica-con-react" },
@@ -57,15 +61,19 @@ export const projects: Item[] = [
       "App de escritorio (Electron) para gráficos y animación de broadcast en vivo, con motor de composición basado en Remotion.",
     tech: ["React", "Electron", "TypeScript"],
     role: "Full-Stack / Desktop",
+    architecture:
+      "App de broadcast multi-proceso en Electron (main/renderer) con React + TypeScript y motor de composición basado en Remotion para gráficos en vivo.",
     links: [{ label: "Landing", href: "https://ember-motion-studio-landing.vercel.app/es/" }],
   },
   {
     id: "dvge",
     title: "Dynamic Vector Graphics Engine (DVGE)",
     description:
-      "Motor de gráficos vectoriales dinámicos en C++ con pipeline de composición y sistema de plugins.",
-    tech: ["C++"],
-    role: "C++ / Graphics",
+      "Motor de gráficos vectoriales dinámicos headless en TypeScript: runtime de animación determinista y por frames para herramientas de diseño, editores de video y gráficos de broadcast. Publicado como @dvge/core en npm.",
+    tech: ["TypeScript"],
+    role: "TypeScript / Engine",
+    architecture:
+      "Motor headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema, sandbox seguro en Shadow DOM para plugins, easing/springs y motores de layout responsive (remapX/remapY). Código estilo SOLID, publicado como @dvge/core (MIT) en npm.",
     links: [
       {
         label: "Código",
@@ -80,6 +88,8 @@ export const projects: Item[] = [
       "Pipeline de compilación multi-nivel para imágenes basado en un espacio tensorial T∈N^{H×W×C}. 4 dialectos (GTE, PTR, CTP, TB) con lowering progresivo a formato comprimido lossless. 100% C++17.",
     tech: ["C++"],
     role: "C++ / Compiladores",
+    architecture:
+      "Pipeline de compilación multi-nivel con 4 dialectos por dominio (GTE → PTR → CTP → TB) y lowering progresivo hasta formato comprimido lossless. 100% C++17, sin dependencias de runtime.",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/MLIR-CampoTensorial" },
     ],
@@ -91,6 +101,8 @@ export const projects: Item[] = [
       "Lenguaje de descripción de escenas 3D/4D basado en campos de distancia firmados (SDF): iluminación, materiales PBR, animación y volume rendering sin mallas, solo geometría procedural y álgebra.",
     tech: ["C++"],
     role: "C++ / Lenguajes",
+    architecture:
+      "Lenguaje con compilador propio (lexer, parser, AST, resolver, emisor RIH en JSON, evaluador SDF) y backend de render por ray marching. Escenas 3D/4D por SDF sin mallas, puramente algebraico.",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/lenguaje-hermetico" },
     ],
@@ -102,6 +114,8 @@ export const projects: Item[] = [
       "Motor de renderizado 3D interactivo para escenas SDF con arquitectura de 5 capas. Carga escenas RIH (JSON), ray marching en CPU y visualización Win32 con cámara en tiempo real.",
     tech: ["C++"],
     role: "C++ / Graphics",
+    architecture:
+      "Arquitectura de 5 capas (Visor Win32, Scene con BVH, Render por ray marching en CPU, RHI con DirectX 11 compute shader, OS). Carga escenas RIH (JSON) y renderiza SDF en tiempo real.",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/motor-grafico" },
     ],
