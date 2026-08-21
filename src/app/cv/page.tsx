@@ -8,18 +8,17 @@ import { siteConfig } from '@/config/site';
 
 // Data from the structured portfolio extracted previously
 const cvData = {
-  pitch: "Desarrollador Full-Stack enfocado en el ecosistema React/Node. Construyo sistemas web escalables aplicando rigor avanzado mediante Spec-Driven Development (SDD) y Property-Based Testing (PBT), asegurando calidad estructural desde la arquitectura hasta el despliegue.",
+  pitch: "Desarrollador Web enfocado en crear y mantener sitios y aplicaciones web con React, Next.js y Node.js. Combino desarrollo frontend moderno con soporte técnico/IT, lo que me permite cubrir tanto la construcción de páginas como el mantenimiento de infraestructura en entornos empresariales, incluidos centros de salud. Aplico buenas prácticas de especificación y pruebas para entregar soluciones estables y escalables.",
   technicalStack: {
-    frontend: ["React 19", "Next.js (App Router)", "Vite", "Zustand", "TanStack Query", "CSS Modules"],
+    frontend: ["HTML5 / CSS3", "JavaScript", "React 19", "Next.js", "Vite", "Tailwind / CSS Modules", "Zustand", "TanStack Query"],
     backend: ["Node.js", "Express", "Prisma ORM", "PostgreSQL", "Supabase"],
-    advanced: ["Spec-Driven Development (SDD)", "Patrón DTO", "Property-Based Testing (PBT)", "Modelado de Amenazas"],
-    tools: ["AI-Assisted Software Engineering", "Semantic Versioning", "Changelog Management"]
+    tools: ["Git", "AI-Assisted Development", "Semantic Versioning", "Despliegue en Vercel / Netlify"]
   },
   methodology: [
-    { title: "Definición y Especificación", desc: "Extracción de HU y flujos de negocio. Redacción con sintaxis EARS y PBT." },
-    { title: "Diseño Arquitectónico", desc: "Elaboración de Visión y Arquitectura, interfaces y resiliencia." },
-    { title: "Desarrollo Modular (AI-Assisted)", desc: "Implementación en subagentes con Filtros de QA y Seguridad Estricto." },
-    { title: "Validación y Supervisión", desc: "Revisión arquitectónica final, testing, actualizacion del changelog y versionado." }
+    { title: "Definición y Especificación", desc: "Extracción de requisitos y flujos de negocio; redacción de especificaciones claras antes de codificar." },
+    { title: "Diseño y Arquitectura", desc: "Definición de estructura de componentes, rutas y modelo de datos." },
+    { title: "Desarrollo Modular Asistido por IA", desc: "Implementación en módulos con revisión de calidad y buenas prácticas." },
+    { title: "Validación y Despliegue", desc: "Pruebas, revisión final, actualización del changelog y versionado semántico." }
   ],
   education: [
     {
@@ -43,19 +42,32 @@ const cvData = {
   ],
   projects: [
     {
-      title: "Twitter/X Follow Card - Fullstack Clone",
+      title: "Twitter/X Follow Card — Clon Fullstack",
       role: "Lead Developer & Architect",
-      desc: "Clon interactivo que replica las tarjetas de seguimiento con persistencia real de datos y optimización UX UX sin parpadeos.",
+      desc: "Clon interactivo que replica las tarjetas de seguimiento de Twitter/X con persistencia real de datos y experiencia de usuario fluida sin parpadeos.",
       bullets: [
-        "Migración de estado efímero a backend integrado con Node/Express, Prisma ORM y Supabase (PostgreSQL).",
-        "Implementación de PGBouncer para pooling de conexiones para permitir HMR en desarrollo sin cierres.",
-        "Experiencia Zero-Flicker con uso de TanStack Query para 'Optimistic Updates' e `isPending`."
+        "Persistencia real con Prisma y Supabase sobre PostgreSQL, sustituyendo el estado efímero por un flujo de datos en backend.",
+        "Actualizaciones optimistas con TanStack Query para una experiencia instantánea y sin parpadeos.",
+        "API REST con Node y Express para alternar el estado de seguimiento.",
+        "Demo en vivo: https://practica-con-react-client.vercel.app",
+        "Código: https://github.com/Mushi-Ayaka/practica-con-react"
+      ]
+    },
+    {
+      title: "Ember Motion Studio — App de escritorio",
+      role: "Desarrollador Independiente",
+      desc: "Software de escritorio de alto rendimiento para gráficos y animaciones profesionales de broadcast, construido con React, Electron y Remotion. Crea, personaliza y exporta gráficos dinámicos con retroalimentación en tiempo real y soporte nativo ProRes 4444 con Alpha.",
+      bullets: [
+        "Motor de renderizado con Remotion y persistencia atómica resiliente para sesiones largas.",
+        "Inspector de propiedades en tiempo real e interfaz bilingüe con sistema de i18n dinámico.",
+        "Proyecto Open Source bajo licencia MIT, desarrollado de forma independiente.",
+        "Sitio oficial: https://ember-motion-studio-landing.vercel.app/es/"
       ]
     },
     {
        title: "Plan de mantenimiento MERCAL Centro Plaza (2025)",
-       role: "Project Manager",
-       desc: "Mantenimiento preventivo y correctivo a 10 estaciones de trabajo, logrando 90% de operatividad técnica.",
+       role: "Project Manager / Soporte Técnico",
+       desc: "Mantenimiento preventivo y correctivo a 10 estaciones de trabajo, logrando 90% de operatividad técnica en un entorno de atención al público.",
        bullets: [
          "Blog del proyecto: https://equiposinformaticosenmercal.blogspot.com/"
        ]
@@ -96,6 +108,9 @@ export default function CVPage() {
               <span>{siteConfig.contactEmail}</span>
               <a href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer">
                 {siteConfig.socialLinks.github.replace('https://', '')}
+              </a>
+              <a href={siteConfig.portfolioUrl} target="_blank" rel="noopener noreferrer">
+                {siteConfig.portfolioUrl.replace('https://', '')}
               </a>
               <span>Caracas, Venezuela</span>
             </div>
