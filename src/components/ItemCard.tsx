@@ -16,7 +16,10 @@ export function ItemCard({ item, moreHref }: { item: Item; moreHref?: string }) 
       <div className={styles.cover}>
         {item.cover ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={item.cover} alt={item.title} />
+          <img
+            src={item.cover}
+            alt={item.title}
+          />
         ) : (
           <span className={styles.coverInitial}>{item.title.charAt(0)}</span>
         )}

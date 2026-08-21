@@ -70,6 +70,39 @@
   line-height: 1.2;
 }
 
+/* ACORDEON: descripcion/arquitectura separadas y mutuamente excluyentes (igual en movil y PC) */
+.toggle {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.1rem;
+}
+
+.tab {
+  flex: 1 1 auto;
+  background: var(--accent-glow);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.42rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tab:hover {
+  color: var(--accent-primary);
+}
+.tabActive {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
+.panel {
+  display: none;
+}
+.panelOpen {
+  display: block;
+}
+
 .desc {
   font-size: 0.92rem;
   color: var(--text-muted);
