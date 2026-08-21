@@ -169,7 +169,7 @@ a:hover {
 .snap-container {
   height: 100vh;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
   touch-action: pan-y;
 }
@@ -177,8 +177,8 @@ a:hover {
 /* CLASE BASE PARA CADA SECCIÓN DENTRO DEL MAIN */
 .snap-section {
   scroll-snap-align: start;
-  height: 100vh;
-  padding: 5rem 6rem;
+  min-height: 100vh;
+  padding: 4rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

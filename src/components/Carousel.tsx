@@ -53,6 +53,7 @@ export function Carousel({
       moved = false;
       startX = e.clientX;
       startScroll = el.scrollLeft;
+      el.style.scrollSnapType = "none";
       el.setPointerCapture?.(e.pointerId);
     };
     const move = (e: PointerEvent) => {
@@ -61,9 +62,10 @@ export function Carousel({
       if (Math.abs(dx) > 5) moved = true;
       el.scrollLeft = startScroll - dx;
     };
-    const up = (e: PointerEvent) => {
+    const end = (e: PointerEvent) => {
       if (!isDown) return;
       isDown = false;
+      el.style.scrollSnapType = "";
       el.releasePointerCapture?.(e.pointerId);
     };
     const clickGuard = (e: MouseEvent) => {
@@ -74,14 +76,14 @@ export function Carousel({
     };
     el.addEventListener("pointerdown", down);
     el.addEventListener("pointermove", move);
-    el.addEventListener("pointerup", up);
-    el.addEventListener("pointercancel", up);
+    el.addEventListener("pointerup", end);
+    el.addEventListener("pointercancel", end);
     el.addEventListener("click", clickGuard, true);
     return () => {
       el.removeEventListener("pointerdown", down);
       el.removeEventListener("pointermove", move);
-      el.removeEventListener("pointerup", up);
-      el.removeEventListener("pointercancel", up);
+      el.removeEventListener("pointerup", end);
+      el.removeEventListener("pointercancel", end);
       el.removeEventListener("click", clickGuard, true);
     };
   }, []);
