@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import '../globals.css';
 import { Sidebar } from '@/components/layout/Sidebar';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-base' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-base' });
 
 export const metadata: Metadata = {
   title: 'Jonatan Baron | Software Engineer',
@@ -17,7 +17,7 @@ export default function PortfolioLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es" className={spaceGrotesk.variable}>
       <body>
         <div className="portfolio-grid">
            <Sidebar />

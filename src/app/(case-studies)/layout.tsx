@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import '../globals.css';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-base' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-base' });
 
 export const metadata: Metadata = {
   title: 'Inspección de Sistema | Case Studies',
@@ -17,7 +17,7 @@ export default function CaseStudyLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es" className={spaceGrotesk.variable}>
        <body style={{ overflow: 'auto', backgroundColor: '#ffffff' }}>
          
          {/* Navbar Flotante de Escape Minimalista */}
