@@ -73,6 +73,39 @@ export const projects: Item[] = [
       },
     ],
   },
+  {
+    id: "mlir-campo-tensorial",
+    title: "MLIR de Campo Tensorial",
+    description:
+      "Pipeline de compilación multi-nivel para imágenes basado en un espacio tensorial T∈N^{H×W×C}. 4 dialectos (GTE, PTR, CTP, TB) con lowering progresivo a formato comprimido lossless. 100% C++17.",
+    tech: ["C++"],
+    role: "C++ / Compiladores",
+    links: [
+      { label: "Código", href: "https://github.com/Mushi-Ayaka/MLIR-CampoTensorial" },
+    ],
+  },
+  {
+    id: "lenguaje-hermetico",
+    title: "Lenguaje Hermético",
+    description:
+      "Lenguaje de descripción de escenas 3D/4D basado en campos de distancia firmados (SDF): iluminación, materiales PBR, animación y volume rendering sin mallas, solo geometría procedural y álgebra.",
+    tech: ["C++"],
+    role: "C++ / Lenguajes",
+    links: [
+      { label: "Código", href: "https://github.com/Mushi-Ayaka/lenguaje-hermetico" },
+    ],
+  },
+  {
+    id: "motor-grafico",
+    title: "Motor Gráfico",
+    description:
+      "Motor de renderizado 3D interactivo para escenas SDF con arquitectura de 5 capas. Carga escenas RIH (JSON), ray marching en CPU y visualización Win32 con cámara en tiempo real.",
+    tech: ["C++"],
+    role: "C++ / Graphics",
+    links: [
+      { label: "Código", href: "https://github.com/Mushi-Ayaka/motor-grafico" },
+    ],
+  },
 ];
 
 export const blogs: Item[] = [];
