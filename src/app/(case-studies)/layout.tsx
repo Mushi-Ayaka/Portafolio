@@ -30,9 +30,9 @@ export default function CaseStudyLayout({
            zIndex: 1000, 
            borderBottom: '1px solid rgba(15,23,42,0.10)'
          }}>
-           <Link href="/" style={{ color: 'var(--accent-primary)', fontWeight: '700', fontSize: '1rem', letterSpacing: '0.05em' }}>
-            &larr; RETORNAR AL HUB CENTRAL
-          </Link>
+            <Link href="/#proyectos" style={{ color: 'var(--accent-primary)', fontWeight: '700', fontSize: '1rem', letterSpacing: '0.05em' }}>
+             &larr; VOLVER A CASOS DE ESTUDIO
+           </Link>
         </nav>
 
         {/* Contentido Libre de Restricciones */}
