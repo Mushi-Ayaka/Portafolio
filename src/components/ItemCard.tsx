@@ -1,9 +1,14 @@
+"use client";
+
 import styles from "./ItemCard.module.css";
 import { TechIcon } from "./TechIcon";
 import Link from "next/link";
 import type { Item } from "@/data/portfolio";
+import { useState } from "react";
 
 export function ItemCard({ item, moreHref }: { item: Item; moreHref?: string }) {
+  const [open, setOpen] = useState<"desc" | "arch">("desc");
+
   return (
     <article className={styles.card}>
       {item.role && <span className={styles.role}>{item.role}</span>}
@@ -19,13 +24,41 @@ export function ItemCard({ item, moreHref }: { item: Item; moreHref?: string }) 
 
       <div className={styles.body}>
         <h3 className={styles.title}>{item.title}</h3>
-        <p className={styles.desc}>{item.description}</p>
 
         {item.architecture && (
-          <p className={styles.architecture}>
-            <span className={styles.archLabel}>Arquitectura</span>
-            {item.architecture}
-          </p>
+          <div className={styles.toggle} role="tablist" aria-label="Secciones de la tarjeta">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={open === "desc"}
+              className={open === "desc" ? `${styles.tab} ${styles.tabActive}` : styles.tab}
+              onClick={() => setOpen("desc")}
+            >
+              Descripción
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={open === "arch"}
+              className={open === "arch" ? `${styles.tab} ${styles.tabActive}` : styles.tab}
+              onClick={() => setOpen("arch")}
+            >
+              Arquitectura
+            </button>
+          </div>
+        )}
+
+        <div className={`${styles.panel} ${open === "desc" ? styles.panelOpen : ""}`}>
+          <p className={styles.desc}>{item.description}</p>
+        </div>
+
+        {item.architecture && (
+          <div className={`${styles.panel} ${open === "arch" ? styles.panelOpen : ""}`}>
+            <p className={styles.architecture}>
+              <span className={styles.archLabel}>Arquitectura</span>
+              {item.architecture}
+            </p>
+          </div>
         )}
 
         <div className={styles.techs}>

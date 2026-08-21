@@ -39,6 +39,8 @@ export function Carousel({
   }, []);
 
   // Arrastrar con el mouse (desktop): scroll horizontal al arrastrar.
+  // Los listeners de move/up van en window para no depender de pointer
+  // capture (asi los clicks en botones internos siguen funcionando).
   // Si hay arrastre, se suprime el click para no abrir "Ver Mas" por error.
   useEffect(() => {
     const el = ref.current;
@@ -54,19 +56,21 @@ export function Carousel({
       startX = e.clientX;
       startScroll = el.scrollLeft;
       el.style.scrollSnapType = "none";
-      el.setPointerCapture?.(e.pointerId);
+      window.addEventListener("pointermove", move);
+      window.addEventListener("pointerup", end);
     };
     const move = (e: PointerEvent) => {
       if (!isDown) return;
       const dx = e.clientX - startX;
       if (Math.abs(dx) > 5) moved = true;
-      el.scrollLeft = startScroll - dx;
+      if (moved) el.scrollLeft = startScroll - dx;
     };
-    const end = (e: PointerEvent) => {
+    const end = () => {
       if (!isDown) return;
       isDown = false;
       el.style.scrollSnapType = "";
-      el.releasePointerCapture?.(e.pointerId);
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", end);
     };
     const clickGuard = (e: MouseEvent) => {
       if (moved) {
@@ -75,16 +79,12 @@ export function Carousel({
       }
     };
     el.addEventListener("pointerdown", down);
-    el.addEventListener("pointermove", move);
-    el.addEventListener("pointerup", end);
-    el.addEventListener("pointercancel", end);
     el.addEventListener("click", clickGuard, true);
     return () => {
       el.removeEventListener("pointerdown", down);
-      el.removeEventListener("pointermove", move);
-      el.removeEventListener("pointerup", end);
-      el.removeEventListener("pointercancel", end);
       el.removeEventListener("click", clickGuard, true);
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", end);
     };
   }, []);
 
