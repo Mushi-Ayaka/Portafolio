@@ -4,7 +4,7 @@ const brand: Brand = {
   bg: "#ffffff",
   surface: "#f7f9f9",
   primary: "#1d9bf0",
-  accent: "#0a66c2",
+  accent: "#1a8cd8",
   text: "#0f1419",
   muted: "#536471",
   border: "rgba(15,20,25,0.12)",
@@ -29,7 +29,7 @@ export default function TwitterClonePage() {
         </>
       }
       role="Arquitecto Frontend / Backend"
-      stack="React 19 · Vite · Node.js · Express · Prisma · Supabase · TanStack Query"
+      stack="React 19 · Vite 8 · Node.js · Express 4 · Prisma 7 · Supabase · TanStack Query"
       links={[
         {
           label: "Ver Demo en Vivo",
@@ -75,11 +75,12 @@ export default function TwitterClonePage() {
         title: "Persistencia Bajo Presión",
         body: (
           <>
-            En el backend, un clon necesita soportar ráfagas transaccionales
-            intensas. Inyectar Supabase es poderoso, pero sin{" "}
-            <em>PGBouncer</em> el entorno serverless satura los túneles y hace
-            crash bajo hot reloads. Mitigado en la capa de tunelización para
-            resistencia extrema y evitar agotar el Node Event Loop al sincronizar
+            En el backend, un clon debe soportar ráfagas transaccionales
+            intensas. Supabase es potente, pero sin{" "}
+            <em>PGBouncer</em> las reconexiones durante el hot reload agotan el
+            límite de conexiones y saturan los túneles. Se mitigó con{" "}
+            <em>connection pooling</em> en la capa de datos para dar resistencia
+            extrema y evitar bloquear el Node Event Loop al sincronizar
             mutaciones constantes.
           </>
         ),
