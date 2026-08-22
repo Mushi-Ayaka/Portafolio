@@ -32,12 +32,6 @@ export default function MLIRCampoTensorialPage() {
           primary: false,
         },
       ]}
-      video="/media/mlir-animacion.mp4"
-      gallery={[
-        { src: "/media/mlir-cuadro-artistico.png", caption: "Cuadro artístico" },
-        { src: "/media/mlir-epico-humanoide.png", caption: "Humanoide épico" },
-        { src: "/media/mlir-cuadro-realista.png", caption: "Cuadro realista" },
-      ]}
       problem={{
         title: "La Explosión del Espacio",
         body: (
