@@ -1,34 +1,49 @@
-import { CaseStudy, type Brand } from "@/components/CaseStudy";
+import { CaseStudy, CaseTooltip, type Brand } from "@/components/CaseStudy";
 
 const brand: Brand = {
-  bg: "#0b0805",
-  surface: "#181009",
-  primary: "#f59e0b",
-  accent: "#f97316",
-  text: "#fff7ed",
-  muted: "#b08968",
-  border: "rgba(245,158,11,0.22)",
+  bg: "#050505",
+  surface: "#121212",
+  primary: "#E44C30",
+  accent: "#801C0B",
+  text: "#F5F5F4",
+  muted: "#A8A29E",
+  border: "rgba(228,76,48,0.22)",
 };
 
 export default function EmberMotionStudioPage() {
   return (
     <CaseStudy
       brand={brand}
-      eyebrow="Caso de Estudio · Broadcast Desktop"
+      eyebrow="Caso de Estudio · Motion Design Broadcast"
       title="Ember Motion Studio"
       subtitle={
         <>
-          App de escritorio para gráficos y animación de broadcast en vivo, con
-          un motor de composición basado en <strong>Remotion</strong>.
+          Suite de escritorio (<strong>Electron + React</strong>) para motion
+          design y animación broadcast, impulsada por el motor{" "}
+          <strong>
+            <CaseTooltip
+              term="DVGE"
+              definition="Dynamic Vector Graphics Engine: motor de renderizado determinista que garantiza consistencia fotograma a fotograma."
+            />
+          </strong>{" "}
+          y el flujo <strong>Vibe Motion</strong>.
         </>
       }
-      role="Full-Stack / Desktop"
-      stack="React · Electron · TypeScript · Remotion"
+      role="Desktop / Engine Integration"
+      stack="Electron · React · TypeScript · DVGE Engine"
       links={[
         {
           label: "Landing",
           href: "https://ember-motion-studio-landing.vercel.app/es/",
           primary: true,
+        },
+        {
+          label: "Demo (YouTube)",
+          href: "https://www.youtube.com/watch?v=2zsTmMPQ9kg",
+        },
+        {
+          label: "Código",
+          href: "https://github.com/Mushi-Ayaka/Ember-Motion-Studio",
         },
       ]}
       problem={{
@@ -37,31 +52,33 @@ export default function EmberMotionStudioPage() {
           <>
             Los gráficos en vivo exigen sincronía <em>frame-perfect</em> y baja
             latencia; las apps web tradicionales no sobreviven a la presión de
-            render en tiempo real ni se integran con flujos de producción.
+            render en tiempo real ni se integran con flujos de producción en
+            OBS, Twitch o DaVinci.
           </>
         ),
       }}
       solution={{
-        title: "Composición con Remotion",
+        title: "DVGE + Vibe Motion",
         body: (
           <>
-            Motor multi-proceso en <em>Electron</em> (main/renderer) con React +
-            TypeScript y composición basada en Remotion, permitiendo gráficos de
-            broadcast programables y actualizables sin reiniciar la emisión.
+            Aplicación multi-proceso en <em>Electron</em> (main/renderer) con
+            React + TypeScript sobre el motor <em>DVGE</em>: renderizado
+            determinista fotograma a fotograma. El flujo <em>Vibe Motion</em>{" "}
+            genera código desde IA, lo pegas en Ember y exportas a{" "}
+            <em>ProRes 4444 con canal alfa</em> listo para OBS, Premiere o After
+            Effects.
           </>
         ),
       }}
-      gallery={[
-        { caption: "Editor de escenas en vivo" },
-        { caption: "Panel de composición" },
-      ]}
       engineering={{
-        title: "Arquitectura Multi-Proceso",
+        title: "Arquitectura Multi-Proceso y Sandbox",
         body: (
           <>
-            Separación estricta entre el proceso principal y el renderer, con
-            canales seguros para inyectar escenas y datos en tiempo real,
-            manteniendo el hilo de UI libre para una experiencia sin cortes.
+            Separación estricta entre proceso principal y renderer, con canales
+            seguros para inyectar escenas en tiempo real. <em>Shadow DOM</em> y
+            un proxy <em>fakeWindow</em> aíslan los plugins de terceros del
+            sistema host, mientras Chromium y FFmpeg se auto-descargan en el
+            primer arranque para cero configuración del entorno.
           </>
         ),
       }}

@@ -64,10 +64,6 @@ export default function DVGEPage() {
         ),
       }}
       video="/media/demoDVGE.mp4"
-      gallery={[
-        { caption: "Editor de escenas en vivo" },
-        { caption: "Plugin Sandbox" },
-      ]}
       engineering={{
         title: "Persistencia y Estabilidad (v5.6.0 GA)",
         body: (

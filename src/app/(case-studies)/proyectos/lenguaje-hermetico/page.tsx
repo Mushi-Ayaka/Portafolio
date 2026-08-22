@@ -52,10 +52,6 @@ export default function LenguajeHermeticoPage() {
           </>
         ),
       }}
-      gallery={[
-        { caption: "Editor de escena SDF" },
-        { caption: "Render por ray marching" },
-      ]}
       engineering={{
         title: "Backend de Render",
         body: (

@@ -51,10 +51,6 @@ export default function MotorGraficoPage() {
           </>
         ),
       }}
-      gallery={[
-        { caption: "Visor Win32" },
-        { caption: "Escena ray-marched" },
-      ]}
       engineering={{
         title: "Capa RHI y OS",
         body: (

@@ -52,10 +52,6 @@ export default function MLIRCampoTensorialPage() {
           </>
         ),
       }}
-      gallery={[
-        { caption: "Dialecto GTE" },
-        { caption: "Reducción CTP → TB" },
-      ]}
       engineering={{
         title: "Lowering sin Pérdida",
         body: (

@@ -61,14 +61,17 @@ export const projects: Item[] = [
     id: "ember-motion-studio",
     title: "Ember Motion Studio",
     description:
-      "App de escritorio (Electron) para gráficos y animación de broadcast en vivo, con motor de composición basado en Remotion.",
-    tech: ["React", "Electron", "TypeScript"],
-    role: "Full-Stack / Desktop",
+      "Suite de escritorio (Electron + React) para motion design y animación broadcast, impulsada por el motor DVGE: renderizado determinista, flujo Vibe Motion y exportación ProRes 4444 con canal alfa.",
+    tech: ["React", "Electron", "TypeScript", "DVGE"],
+    role: "Desktop / Engine Integration",
     architecture:
-      "App de broadcast multi-proceso en Electron (main/renderer) con React + TypeScript y motor de composición basado en Remotion para gráficos en vivo.",
+      "App broadcast multi-proceso en Electron (main/renderer) con React + TypeScript sobre el motor DVGE (determinismo fotograma a fotograma). Flujo Vibe Motion (la IA genera el código), sandbox con Shadow DOM + fakeWindow, y auto-descarga de Chromium/FFmpeg para exportar ProRes 4444 + Alpha en OBS, Premiere y After Effects.",
     detailHref: "/proyectos/ember-motion-studio",
-    cover: "/media/elementSquareEMS.png",
-    links: [{ label: "Landing", href: "https://ember-motion-studio-landing.vercel.app/es/" }],
+    links: [
+      { label: "Landing", href: "https://ember-motion-studio-landing.vercel.app/es/" },
+      { label: "Demo", href: "https://www.youtube.com/watch?v=2zsTmMPQ9kg" },
+      { label: "Código", href: "https://github.com/Mushi-Ayaka/Ember-Motion-Studio" },
+    ],
   },
   {
     id: "dvge",
