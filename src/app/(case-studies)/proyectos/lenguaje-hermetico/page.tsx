@@ -1,13 +1,13 @@
 import { CaseStudy, type Brand } from "@/components/CaseStudy";
 
 const brand: Brand = {
-  bg: "#04100b",
-  surface: "#0a1f15",
-  primary: "#10b981",
-  accent: "#34d399",
-  text: "#ecfdf5",
-  muted: "#6ee7b7",
-  border: "rgba(16,185,129,0.22)",
+  bg: "#ffffff",
+  surface: "#f4f4f5",
+  primary: "#111111",
+  accent: "#000000",
+  text: "#111111",
+  muted: "#555555",
+  border: "rgba(0,0,0,0.12)",
 };
 
 export default function LenguajeHermeticoPage() {
@@ -29,7 +29,7 @@ export default function LenguajeHermeticoPage() {
         {
           label: "Código",
           href: "https://github.com/Mushi-Ayaka/lenguaje-hermetico",
-          primary: true,
+          primary: false,
         },
       ]}
       problem={{

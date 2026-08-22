@@ -57,7 +57,7 @@ export default function DVGEPage() {
         title: "Knowledge Bridge AI",
         body: (
           <>
-            La v5.5 introduce inyección de contexto nativa. Al arrastrar el PDF
+            Introduce inyección de contexto nativa. Al arrastrar el PDF
             de reglas de DVGE a una IA, el asistente comprende al instante las
             restricciones del Shadow DOM y el Sandbox, generando código
             funcional al primer intento.             Se publica como paquete npm:{" "}
@@ -67,7 +67,7 @@ export default function DVGEPage() {
       }}
       video="/media/demoDVGE.mp4"
       engineering={{
-        title: "Persistencia y Estabilidad (v5.6.0 GA)",
+        title: "Persistencia y Estabilidad",
         body: (
           <>
             Subsistema de <em>I/O Atómico Asíncrono</em> para evitar corrupción

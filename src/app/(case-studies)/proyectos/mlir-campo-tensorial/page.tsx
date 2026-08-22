@@ -1,13 +1,13 @@
 import { CaseStudy, type Brand } from "@/components/CaseStudy";
 
 const brand: Brand = {
-  bg: "#0a0712",
-  surface: "#14102a",
-  primary: "#8b5cf6",
-  accent: "#a855f7",
-  text: "#f5f3ff",
-  muted: "#a78bfa",
-  border: "rgba(139,92,246,0.22)",
+  bg: "#ffffff",
+  surface: "#f4f4f5",
+  primary: "#111111",
+  accent: "#000000",
+  text: "#111111",
+  muted: "#555555",
+  border: "rgba(0,0,0,0.12)",
 };
 
 export default function MLIRCampoTensorialPage() {
@@ -29,7 +29,7 @@ export default function MLIRCampoTensorialPage() {
         {
           label: "Código",
           href: "https://github.com/Mushi-Ayaka/MLIR-CampoTensorial",
-          primary: true,
+          primary: false,
         },
       ]}
       problem={{

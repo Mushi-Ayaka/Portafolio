@@ -1,13 +1,13 @@
 import { CaseStudy, type Brand } from "@/components/CaseStudy";
 
 const brand: Brand = {
-  bg: "#060b16",
-  surface: "#0e172a",
-  primary: "#3b82f6",
-  accent: "#60a5fa",
-  text: "#eff6ff",
-  muted: "#93c5fd",
-  border: "rgba(59,130,246,0.22)",
+  bg: "#ffffff",
+  surface: "#f4f4f5",
+  primary: "#111111",
+  accent: "#000000",
+  text: "#111111",
+  muted: "#555555",
+  border: "rgba(0,0,0,0.12)",
 };
 
 export default function MotorGraficoPage() {
@@ -29,7 +29,7 @@ export default function MotorGraficoPage() {
         {
           label: "Código",
           href: "https://github.com/Mushi-Ayaka/motor-grafico",
-          primary: true,
+          primary: false,
         },
       ]}
       problem={{
