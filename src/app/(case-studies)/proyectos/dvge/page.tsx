@@ -33,13 +33,13 @@ export default function DVGEPage() {
       stack="TypeScript · Shadow DOM · Plugins · npm (@dvge/core)"
       links={[
         {
-          label: "Descarga (Win x64)",
-          href: "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe",
+          label: "npm: @dvge/core",
+          href: "https://www.npmjs.com/package/@dvge/core",
           primary: true,
         },
         {
-          label: "Documentación",
-          href: "https://mushi-ayaka.github.io/DVGE-Docs/",
+          label: "Código (GitHub)",
+          href: "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-",
         },
       ]}
       problem={{
@@ -58,9 +58,10 @@ export default function DVGEPage() {
         body: (
           <>
             La v5.5 introduce inyección de contexto nativa. Al arrastrar el PDF
-            de reglas del motor a una IA, el asistente comprende al instante las
+            de reglas de DVGE a una IA, el asistente comprende al instante las
             restricciones del Shadow DOM y el Sandbox, generando código
-            funcional al primer intento.
+            funcional al primer intento. Se distribuye como paquete npm:{" "}
+            <code>npm install @dvge/core</code>.
           </>
         ),
       }}
