@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './cv.module.css';
@@ -79,6 +79,12 @@ export default function CVPage() {
   const handlePrint = () => {
     window.print();
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.search.includes('print')) {
+      handlePrint();
+    }
+  }, []);
 
   return (
     <div className={styles.page}>

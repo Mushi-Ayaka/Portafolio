@@ -7,6 +7,13 @@ import { skills, projects } from '@/data/portfolio';
 export default function Home() {
   return (
     <div className="focus-group">
+      {/* CTA Descargar CV - accesible en inicio (móvil/desktop) */}
+      <div className={styles.cvCta}>
+        <a href="/cv?print=1" target="_blank" rel="noopener noreferrer" className={styles.cvCtaBtn} aria-label="Descargar CV en PDF">
+          <span aria-hidden="true">⬇</span> Descargar CV (PDF)
+        </a>
+      </div>
+
       {/* 01. PRESENTACIÓN */}
       <section id="presentacion" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>Sobre Mí.</h2>
