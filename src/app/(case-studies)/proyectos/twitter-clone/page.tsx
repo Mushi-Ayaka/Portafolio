@@ -67,10 +67,6 @@ export default function TwitterClonePage() {
         ),
       }}
       video="/media/demo.mp4"
-      gallery={[
-        { caption: "Tarjeta de seguimiento" },
-        { caption: "Estado optimista isPending" },
-      ]}
       engineering={{
         title: "Persistencia Bajo Presión",
         body: (
