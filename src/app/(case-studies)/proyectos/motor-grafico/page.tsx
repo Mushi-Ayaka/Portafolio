@@ -32,6 +32,11 @@ export default function MotorGraficoPage() {
           primary: false,
         },
       ]}
+      gallery={[
+        { src: "/media/IMG_20260821_225840_301.jpg", caption: "Muestra de renderizado 1" },
+        { src: "/media/IMG_20260821_225840_648.jpg", caption: "Muestra de renderizado 2" },
+        { src: "/media/IMG_20260821_225840_873.jpg", caption: "Muestra de renderizado 3" },
+      ]}
       problem={{
         title: "Tiempo Real en CPU",
         body: (
