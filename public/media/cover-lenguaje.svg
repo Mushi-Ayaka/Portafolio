@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Space Grotesk', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b16"/>
+      <stop offset="0.55" stop-color="#0b2230"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.55" r="0.6">
+      <stop offset="0" stop-color="#06b6d4" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#22d3ee" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#67e8f9"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+
+  <text x="64" y="96" fill="#e2f6fb" font-size="34" font-weight="700">Lenguaje Hermético</text>
+  <text x="64" y="128" fill="#7dd3fc" font-size="19" font-weight="500" letter-spacing="3">RAY MARCHING · SDF</text>
+
+  <circle cx="850" cy="380" r="150" fill="#06b6d4" opacity="0.08"/>
+  <circle cx="850" cy="380" r="150" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.9"/>
+  <line x1="120" y1="380" x2="700" y2="380" stroke="#67e8f9" stroke-width="3" marker-end="url(#ah)"/>
+  <circle cx="120" cy="380" r="6" fill="#a5f3fc"/>
+  <text x="850" y="565" text-anchor="middle" fill="#7dd3fc" font-family="ui-monospace, monospace" font-size="22">SDF(p) = min&#7522; d(p, prim&#7522;)</text>
+
+  <text x="64" y="470" fill="#a5f3fc" font-family="ui-monospace, monospace" font-size="30">p &#8592; p + d · max(0, SDF(p))</text>
+  <text x="64" y="512" fill="#67e8f9" font-family="ui-monospace, monospace" font-size="24">render:  p&#8345;&#8321; = p&#8345; + d · SDF(p&#8345;)</text>
+
+  <text x="64" y="624" fill="#cbd5e1" font-size="18">Compilador propio · AST · evaluador RIH · escenas 3D/4D por SDF</text>
+</svg>

@@ -51,6 +51,7 @@ export const projects: Item[] = [
     architecture:
       "Fullstack desacoplado: cliente React 19 + Vite y servidor Express 4 con capas controllers/models/routes. Persistencia real en PostgreSQL vía Prisma 7 + Supabase y actualizaciones optimistas con TanStack Query v5 (invalidation). Cubierto por tests con Vitest + Testing Library.",
     detailHref: "/proyectos/twitter-clone",
+    cover: "/media/x-follow-card.png",
     links: [
       { label: "Demo", href: "https://practica-con-react-client.vercel.app" },
       { label: "Código", href: "https://github.com/Mushi-Ayaka/practica-con-react" },
@@ -66,6 +67,7 @@ export const projects: Item[] = [
     architecture:
       "App de broadcast multi-proceso en Electron (main/renderer) con React + TypeScript y motor de composición basado en Remotion para gráficos en vivo.",
     detailHref: "/proyectos/ember-motion-studio",
+    cover: "/media/elementSquareEMS.png",
     links: [{ label: "Landing", href: "https://ember-motion-studio-landing.vercel.app/es/" }],
   },
   {
@@ -78,6 +80,7 @@ export const projects: Item[] = [
     architecture:
       "Motor headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema, sandbox seguro en Shadow DOM para plugins, easing/springs y motores de layout responsive (remapX/remapY). Código estilo SOLID, publicado como @dvge/core (MIT) en npm.",
     detailHref: "/proyectos/dvge",
+    cover: "/media/iconDVGE.png",
     links: [
       {
         label: "Código",
@@ -95,6 +98,7 @@ export const projects: Item[] = [
     architecture:
       "Pipeline de compilación multi-nivel con 4 dialectos por dominio (GTE → PTR → CTP → TB) y lowering progresivo hasta formato comprimido lossless. 100% C++17, sin dependencias de runtime.",
     detailHref: "/proyectos/mlir-campo-tensorial",
+    cover: "/media/cover-mlir.svg",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/MLIR-CampoTensorial" },
     ],
@@ -109,6 +113,7 @@ export const projects: Item[] = [
     architecture:
       "Lenguaje con compilador propio (lexer, parser, AST, resolver, emisor RIH en JSON, evaluador SDF) y backend de render por ray marching. Escenas 3D/4D por SDF sin mallas, puramente algebraico.",
     detailHref: "/proyectos/lenguaje-hermetico",
+    cover: "/media/cover-lenguaje.svg",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/lenguaje-hermetico" },
     ],
@@ -123,6 +128,7 @@ export const projects: Item[] = [
     architecture:
       "Arquitectura de 5 capas (Visor Win32, Scene con BVH, Render por ray marching en CPU, RHI con DirectX 11 compute shader, OS). Carga escenas RIH (JSON) y renderiza SDF en tiempo real.",
     detailHref: "/proyectos/motor-grafico",
+    cover: "/media/cover-motor.svg",
     links: [
       { label: "Código", href: "https://github.com/Mushi-Ayaka/motor-grafico" },
     ],

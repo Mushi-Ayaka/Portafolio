@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Space Grotesk', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b16"/>
+      <stop offset="0.55" stop-color="#0b2230"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#06b6d4" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#22d3ee" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+
+  <text x="64" y="96" fill="#e2f6fb" font-size="34" font-weight="700">Motor Gráfico</text>
+  <text x="64" y="128" fill="#7dd3fc" font-size="19" font-weight="500" letter-spacing="3">TIEMPO REAL · SDF</text>
+
+  <g font-family="ui-monospace, monospace" font-size="20" font-weight="700" text-anchor="middle" fill="#e2f6fb">
+    <rect x="760" y="180" width="380" height="60" rx="10" fill="#22d3ee"/>
+    <text x="950" y="216">Visor Win32</text>
+    <rect x="760" y="252" width="380" height="60" rx="10" fill="#06b6d4"/>
+    <text x="950" y="288">Scene · BVH</text>
+    <rect x="760" y="324" width="380" height="60" rx="10" fill="#0e7490"/>
+    <text x="950" y="360">Render · Ray March (CPU)</text>
+    <rect x="760" y="396" width="380" height="60" rx="10" fill="#155e75"/>
+    <text x="950" y="432">RHI · DX11 Compute</text>
+    <rect x="760" y="468" width="380" height="60" rx="10" fill="#164e63"/>
+    <text x="950" y="504">OS</text>
+  </g>
+
+  <text x="64" y="470" fill="#a5f3fc" font-family="ui-monospace, monospace" font-size="28">L_o(p,&#969;) = L_e + &#8747; f_r L_i cos&#952; d&#969;</text>
+  <text x="64" y="512" fill="#67e8f9" font-family="ui-monospace, monospace" font-size="24">BVH · Ray March · DirectX 11 Compute</text>
+
+  <text x="64" y="624" fill="#cbd5e1" font-size="18">5 capas · carga RIH (JSON) · SDF en tiempo real</text>
+</svg>
