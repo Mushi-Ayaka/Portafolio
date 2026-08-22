@@ -19,11 +19,11 @@ export default function EmberMotionStudioPage() {
       subtitle={
         <>
           Suite de escritorio (<strong>Electron + React</strong>) para motion
-          design y animación broadcast, impulsada por el motor{" "}
+          design y animación broadcast,           impulsada por el puente{" "}
           <strong>
             <CaseTooltip
               term="DVGE"
-              definition="Dynamic Vector Graphics Engine: motor de renderizado determinista que garantiza consistencia fotograma a fotograma."
+              definition="Dynamic Vector Graphics Engine: puente que conecta la app host con un sandbox de ejecución determinista, fotograma a fotograma."
             />
           </strong>{" "}
           y el flujo <strong>Vibe Motion</strong>.
@@ -62,7 +62,7 @@ export default function EmberMotionStudioPage() {
         body: (
           <>
             Aplicación multi-proceso en <em>Electron</em> (main/renderer) con
-            React + TypeScript sobre el motor <em>DVGE</em>: renderizado
+            React + TypeScript sobre el puente <em>DVGE</em>: renderizado
             determinista fotograma a fotograma. El flujo <em>Vibe Motion</em>{" "}
             genera código desde IA, lo pegas en Ember y exportas a{" "}
             <em>ProRes 4444 con canal alfa</em> listo para OBS, Premiere o After

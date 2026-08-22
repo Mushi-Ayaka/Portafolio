@@ -1,12 +1,12 @@
 import { CaseStudy, CaseTooltip, type Brand } from "@/components/CaseStudy";
 
 const brand: Brand = {
-  bg: "#0a0707",
-  surface: "#161010",
-  primary: "#e44c30",
-  accent: "#ff6b4a",
-  text: "#fdf2f0",
-  muted: "#9a6b63",
+  bg: "#050505",
+  surface: "#121212",
+  primary: "#E44C30",
+  accent: "#801C0B",
+  text: "#F5F5F4",
+  muted: "#A8A29E",
   border: "rgba(228,76,48,0.22)",
 };
 
@@ -14,21 +14,22 @@ export default function DVGEPage() {
   return (
     <CaseStudy
       brand={brand}
-      eyebrow="Caso de Estudio · Motor de Gráficos"
+      eyebrow="Caso de Estudio · Puente de Gráficos"
       title="Dynamic Vector Graphics Engine"
       subtitle={
         <>
-          Arquitectura de grado broadcast con{" "}
+          Puente <strong>headless</strong> que conecta tu app o herramienta de
+          diseño con un sandbox de ejecución seguro y determinista, con el{" "}
           <strong>
             <CaseTooltip
-              term="Determinismo Total"
-              definition="Consistencia idéntica de cuadros en cada renderizado."
+              term="Knowledge Bridge AI"
+              definition="Exportador de contexto nativo: extrae las reglas del canvas y los límites del sandbox en un PDF para entrenar IA externa."
             />
-          </strong>{" "}
-          y el nuevo Knowledge Bridge AI.
+          </strong>
+          .
         </>
       }
-      role="Arquitecto de Software & Engine Dev"
+      role="Arquitecto de Software & Bridge Dev"
       stack="TypeScript · Shadow DOM · Plugins · npm (@dvge/core)"
       links={[
         {
@@ -70,10 +71,8 @@ export default function DVGEPage() {
           <>
             Subsistema de <em>I/O Atómico Asíncrono</em> para evitar corrupción
             de proyectos. Gestión Integral de Proyectos: renombrado y
-            eliminación atómica desde la Galería, Control de Integridad de
-            Plugins que bloquea dependencias faltantes, y Auto-Fetch de
-            Chromium y FFmpeg que elimina cualquier dependencia del entorno del
-            usuario.
+            eliminación atómica desde la Galería, y Control de Integridad de
+            Plugins que bloquea dependencias faltantes en el sandbox.
           </>
         ),
       }}

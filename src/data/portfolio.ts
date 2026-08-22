@@ -61,11 +61,11 @@ export const projects: Item[] = [
     id: "ember-motion-studio",
     title: "Ember Motion Studio",
     description:
-      "Suite de escritorio (Electron + React) para motion design y animación broadcast, impulsada por el motor DVGE: renderizado determinista, flujo Vibe Motion y exportación ProRes 4444 con canal alfa.",
+      "Suite de escritorio (Electron + React) para motion design y animación broadcast, impulsada por el puente DVGE: renderizado determinista, flujo Vibe Motion y exportación ProRes 4444 con canal alfa.",
     tech: ["React", "Electron", "TypeScript", "DVGE"],
     role: "Desktop / Engine Integration",
     architecture:
-      "App broadcast multi-proceso en Electron (main/renderer) con React + TypeScript sobre el motor DVGE (determinismo fotograma a fotograma). Flujo Vibe Motion (la IA genera el código), sandbox con Shadow DOM + fakeWindow, y auto-descarga de Chromium/FFmpeg para exportar ProRes 4444 + Alpha en OBS, Premiere y After Effects.",
+      "App broadcast multi-proceso en Electron (main/renderer) con React + TypeScript sobre el puente DVGE (determinismo fotograma a fotograma). Flujo Vibe Motion (la IA genera el código), sandbox con Shadow DOM + fakeWindow, y auto-descarga de Chromium/FFmpeg para exportar ProRes 4444 + Alpha en OBS, Premiere y After Effects.",
     detailHref: "/proyectos/ember-motion-studio",
     links: [
       { label: "Landing", href: "https://ember-motion-studio-landing.vercel.app/es/" },
@@ -77,11 +77,11 @@ export const projects: Item[] = [
     id: "dvge",
     title: "Dynamic Vector Graphics Engine (DVGE)",
     description:
-      "Motor de gráficos vectoriales dinámicos headless en TypeScript: runtime de animación determinista y por frames para herramientas de diseño, editores de video y gráficos de broadcast. Publicado como @dvge/core en npm.",
-    tech: ["TypeScript"],
-    role: "TypeScript / Engine",
+      "Puente (bridge) headless en TypeScript que conecta tu app o herramienta de diseño con un sandbox de ejecución seguro y determinista para gráficos vectoriales animados. Publicado como @dvge/core en npm (MIT).",
+    tech: ["TypeScript", "Shadow DOM", "@dvge/core"],
+    role: "TypeScript / Bridge Dev",
     architecture:
-      "Motor headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema, sandbox seguro en Shadow DOM para plugins, easing/springs y motores de layout responsive (remapX/remapY). Código estilo SOLID, publicado como @dvge/core (MIT) en npm.",
+      "Bridge headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema (frame-accurate), sandbox seguro en Shadow DOM para plugins, easing/springs y layout responsive (remapX/remapY). Incluye Knowledge Bridge AI para inyectar contexto a la IA. Código estilo SOLID, publicado como @dvge/core (MIT) en npm.",
     detailHref: "/proyectos/dvge",
     cover: "/media/iconDVGE.png",
     links: [
