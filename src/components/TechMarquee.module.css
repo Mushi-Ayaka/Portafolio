@@ -1,0 +1,68 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: max-content;
+  animation-name: tm-scroll-left;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.marquee[data-direction="right"] .track {
+  animation-name: tm-scroll-right;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+.skillCard {
+  flex: 0 0 auto;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1rem;
+  background-color: var(--bg-card);
+  border-radius: 14px;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 12px 28px -14px rgba(15, 23, 42, 0.18);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 18px 36px -16px rgba(6, 182, 212, 0.25);
+}
+
+.skillCard svg {
+  color: var(--accent-primary);
+}
+
+@keyframes tm-scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes tm-scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

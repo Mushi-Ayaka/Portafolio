@@ -209,6 +209,15 @@
   }
 }
 
+/* DOS FILAS DE STACK (MARQUEE) */
+.skillsMarquees {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 /* CAROUSEL */
 .carouselContainer {
   position: relative;

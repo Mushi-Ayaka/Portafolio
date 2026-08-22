@@ -1,10 +1,14 @@
 import styles from '../page.module.css';
 import { Carousel } from '@/components/Carousel';
 import { ItemCard } from '@/components/ItemCard';
-import { TechIcon } from '@/components/TechIcon';
 import { skills, projects } from '@/data/portfolio';
+import { TechMarquee } from '@/components/TechMarquee';
 
 export default function Home() {
+  const half = Math.ceil(skills.length / 2);
+  const skillsA = skills.slice(0, half);
+  const skillsB = skills.slice(half);
+
   return (
     <div className="focus-group">
       {/* CTA Descargar CV - accesible en inicio (móvil/desktop) */}
@@ -25,14 +29,10 @@ export default function Home() {
       {/* 02. SKILLS */}
       <section id="skills" className={`snap-section focus-item ${styles.section}`}>
         <h2 className={styles.sectionTitle}>Stack de Herramientas</h2>
-        <Carousel ariaLabel="Tecnologías que uso">
-          {skills.map((s) => (
-            <div key={s} className={styles.skillCard}>
-              <TechIcon name={s} size={30} />
-              <span>{s}</span>
-            </div>
-          ))}
-        </Carousel>
+        <div className={styles.skillsMarquees}>
+          <TechMarquee items={skillsA} direction="left" />
+          <TechMarquee items={skillsB} direction="right" />
+        </div>
       </section>
 
       {/* 03. FLUJO */}
