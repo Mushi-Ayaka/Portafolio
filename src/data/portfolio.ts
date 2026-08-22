@@ -77,11 +77,11 @@ export const projects: Item[] = [
     id: "dvge",
     title: "Dynamic Vector Graphics Engine (DVGE)",
     description:
-      "Puente (bridge) headless en TypeScript que conecta tu app o herramienta de diseño con un sandbox de ejecución seguro y determinista para gráficos vectoriales animados. Distribuido como paquete npm @dvge/core (MIT) desde el repositorio.",
+      "Puente (bridge) headless en TypeScript que conecta tu app o herramienta de diseño con un sandbox de ejecución seguro y determinista para gráficos vectoriales animados. Publicado como @dvge/core en npm (MIT).",
     tech: ["TypeScript", "Shadow DOM", "@dvge/core"],
     role: "TypeScript / Bridge Dev",
     architecture:
-      "Bridge headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema (frame-accurate), sandbox seguro en Shadow DOM para plugins, easing/springs y layout responsive (remapX/remapY). Incluye Knowledge Bridge AI para inyectar contexto a la IA. Código estilo SOLID, distribuido como paquete npm @dvge/core (MIT) desde el repositorio.",
+      "Bridge headless 100% determinista y por frames: cálculo algebraico de timeline sin reloj del sistema (frame-accurate), sandbox seguro en Shadow DOM para plugins, easing/springs y layout responsive (remapX/remapY). Incluye Knowledge Bridge AI para inyectar contexto a la IA. Código estilo SOLID, publicado como @dvge/core (MIT) en npm.",
     detailHref: "/proyectos/dvge",
     cover: "/media/iconDVGE.png",
     links: [
