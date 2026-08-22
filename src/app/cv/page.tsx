@@ -94,10 +94,10 @@ export default function CVPage() {
       <div className={styles.cvContainer}>
         {/* Header */}
         <header className={styles.header}>
-          {/* FOTO - Debe existir en public/media/profile.jpg */}
+          {/* FOTO - Debe existir en public/media/profile.png */}
           <div style={{ position: 'relative', width: 90, height: 90, flexShrink: 0 }}>
              <Image 
-               src="/media/profile.jpg" 
+                src="/media/profile.png" 
                alt="Jonatan Baron" 
                className={styles.photo}
                width={90}
