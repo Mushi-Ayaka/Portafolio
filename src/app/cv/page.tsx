@@ -92,6 +92,14 @@ export default function CVPage() {
       </div>
 
       <div className={styles.cvContainer}>
+        {/* CTA destacado: descargar CV (visible en inicio / móvil) */}
+        <div className={styles.downloadCta}>
+          <button type="button" onClick={handlePrint} className={styles.downloadBtn} aria-label="Descargar CV en PDF">
+            <span className={styles.dlIcon} aria-hidden="true">⬇</span>
+            Descargar CV (PDF)
+          </button>
+        </div>
+
         {/* Header */}
         <header className={styles.header}>
           {/* FOTO - Debe existir en public/media/profile.png */}
