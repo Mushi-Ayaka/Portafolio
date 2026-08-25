@@ -60,3 +60,15 @@
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
 }
+
+/* El global '* { animation: none !important }' bajo reduced-motion congela el
+   marquee en móvil. Lo re-habilitamos solo para el carrusel (mayor especificidad
+   + !important) sin afectar la accesibilidad del resto. */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: tm-scroll-left 35s linear infinite !important;
+  }
+  .marquee[data-direction="right"] .track {
+    animation-name: tm-scroll-right !important;
+  }
+}
