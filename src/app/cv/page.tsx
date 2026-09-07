@@ -97,7 +97,7 @@ export default function CVPage() {
           {/* FOTO - Debe existir en public/media/profile.png */}
           <div style={{ position: 'relative', width: 75, height: 100, flexShrink: 0 }}>
              <Image
-                src="/media/profile-new.jpg"
+                src="/media/profile-foto.jpg"
                alt="Jonatan Baron"
                className={styles.photo}
                width={75}
