@@ -28,12 +28,6 @@ const cvData = {
       desc: "Caracas, Parroquia San Juan."
     },
     {
-      title: "Certificado de Iniciación al Desarrollo con IA",
-      institution: "BIG SCHOOL",
-      date: "03/2026",
-      desc: "Flujo de Trabajo Eficiente con Agentes de IA."
-    },
-    {
       title: "Bachiller",
       institution: "U.E.N Almirante Brión",
       date: "2019 - 2024",
