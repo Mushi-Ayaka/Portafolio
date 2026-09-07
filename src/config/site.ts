@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Jonatan Baron",
+  name: "Jonatan David Baron Beomon",
   role: "Desarrollador Web",
   cvUrl: "/cv",
   contactEmail: "barojonatan8@gmail.com",

@@ -116,6 +116,7 @@ export default function CVPage() {
             <h1>{siteConfig.name}</h1>
             <h2>{siteConfig.role}</h2>
             <div className={styles.contact}>
+              <span>0412-1798510</span>
               <span>{siteConfig.contactEmail}</span>
               <a href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer">
                 {siteConfig.socialLinks.github.replace('https://', '')}
