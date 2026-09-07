@@ -101,13 +101,13 @@ export default function CVPage() {
         {/* Header */}
         <header className={styles.header}>
           {/* FOTO - Debe existir en public/media/profile.png */}
-          <div style={{ position: 'relative', width: 90, height: 90, flexShrink: 0 }}>
-             <Image 
+          <div style={{ position: 'relative', width: 75, height: 100, flexShrink: 0 }}>
+             <Image
                 src="/media/profile-new.jpg"
-               alt="Jonatan Baron" 
+               alt="Jonatan Baron"
                className={styles.photo}
-               width={90}
-               height={90}
+               width={75}
+               height={100}
                priority
                unoptimized
              />
