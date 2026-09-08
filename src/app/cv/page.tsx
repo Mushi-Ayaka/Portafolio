@@ -6,7 +6,6 @@ import Image from 'next/image';
 import styles from './cv.module.css';
 import { siteConfig } from '@/config/site';
 
-// Data from the structured portfolio extracted previously
 const cvData = {
   pitch: "Desarrollador Web enfocado en crear y mantener sitios y aplicaciones web con React, Next.js y Node.js. Combino desarrollo frontend moderno con soporte técnico/IT, lo que me permite cubrir tanto la construcción de páginas como el mantenimiento de infraestructura en entornos empresariales, incluidos centros de salud. Aplico buenas prácticas de especificación y pruebas para entregar soluciones estables y escalables.",
   technicalStack: {
@@ -37,7 +36,7 @@ const cvData = {
   projects: [
     {
       title: "Twitter/X Follow Card — Clon Fullstack",
-      role: "Lead Developer & Architect",
+      role: "Architect",
       desc: "Clon interactivo que replica las tarjetas de seguimiento de Twitter/X con persistencia real de datos y experiencia de usuario fluida sin parpadeos.",
       bullets: [
         "Persistencia real con Prisma y Supabase sobre PostgreSQL, sustituyendo el estado efímero por un flujo de datos en backend.",
