@@ -119,7 +119,6 @@ export default function CVPage() {
               </a>
               <span>C.I. 32.353.222</span>
               <span>19 años</span>
-              <span>Caracas, Venezuela</span>
               <span>Calle Primavera, Propatria casa NRO 30-85, Barrio Mario Briceño Iragorri, Zona Postal 1030</span>
             </div>
           </div>
